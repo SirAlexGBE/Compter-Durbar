@@ -104,11 +104,13 @@ const LaptopCarousel = () => {
   const getVisibleItems = () => laptops.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 my-12 bg-white mb-5">
+    <div className="w-[1400PX]  my-12 bg-white mb-5">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-3xl font-bold text-gray-800">You may like also:</h2>
-        <div className="flex">
+        <h2 className="text-3xl font-bold text-gray-800 ml-20">
+          You may like also:
+        </h2>
+        <div className="flex ">
           <button
             onClick={scrollLeft}
             disabled={currentIndex === 0}
@@ -135,7 +137,7 @@ const LaptopCarousel = () => {
       </div>
 
       {/* Cards */}
-      <div className="flex gap-6 overflow-hidden my-10  h-[520px] ">
+      <div className="flex gap-6 overflow-hidden my-10  h-[520px] ml-30 ">
         {getVisibleItems().map((laptop) => (
           <div
             key={laptop.id}
@@ -149,14 +151,14 @@ const LaptopCarousel = () => {
               />
             </div>
             <div className="p-5 pb-8">
-              <div className="flex justify-between text-sm text-gray-500 mb-3">
+              <div className="flex justify-between text-sm text-gray-600 mb-3">
                 <span className="font-medium">{laptop.author}</span>
                 <span>{laptop.date}</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
                 {laptop.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">
+              <p className="text-gray-700 text-sm mb-4 line-clamp-3 leading-relaxed">
                 {laptop.description}
               </p>
               <button className="flex items-center gap-2 text-black text-sm font-medium group">
@@ -171,7 +173,7 @@ const LaptopCarousel = () => {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-4 my-10">
+      <div className="flex justify-center gap-4 my-10 ml-10">
         {Array.from({ length: maxIndex + 1 }).map((_, index) => (
           <button
             key={index}
