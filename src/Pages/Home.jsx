@@ -10,6 +10,7 @@ const Home = () => {
     <>
       <News />
       <LaptopCarousel />
+
       <Footer />
     </>
   );
