@@ -5,8 +5,18 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [count1, setCount1] = useState(0);
 
-  return <></>;
+  return (
+    <>
+      <div>
+        <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+      </div>
+      <div>
+        <button onClick={() => setCount1(count1 + 1)}>Count1: {count1}</button>
+      </div>
+    </>
+  );
 }
 
 export default App;
