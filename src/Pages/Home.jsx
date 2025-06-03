@@ -1,8 +1,12 @@
 import React from "react";
-import Navbar from "../Components/Nabvar";
+import MacBookProductListing from "../Components/MacbookProductListing";
 
 const Home = () => {
-  return <Navbar />;
+  return (
+    <>
+      <MacBookProductListing />
+    </>
+  );
 };
 
 export default Home;
