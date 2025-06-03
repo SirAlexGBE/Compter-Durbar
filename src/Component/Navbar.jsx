@@ -2,12 +2,12 @@ import { Search, ShoppingCart, Heart, User } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <div className="w-full shadow-md bg-white px-6 py-3 flex items-center justify-between">
+    <div className="w-full shadow-md bg-white px-6 py-4 flex items-center   justify-between">
       {/* Logo */}
       <div className="text-lg font-semibold text-blue-900">Computer Durbar</div>
 
       {/* Search Bar */}
-      <div className="flex items-center w-full max-w-xl ">
+      <div className="flex items-center w-full max-w-xl justify-center">
         <input
           type="text"
           placeholder="Search products here..."

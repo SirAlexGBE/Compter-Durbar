@@ -1,10 +1,14 @@
 import React from "react";
-import MacBookProductListing from "../Components/MacbookProductListing";
+import Navbar from "../Component/Navbar";
+import LaptopCarousel from "../Component/LaptopCarousel";
+// import Footer from "../Component/Footer";
 
 const Home = () => {
   return (
     <>
-      <MacBookProductListing />
+      <LaptopCarousel />
+
+      {/* <Footer /> */}
     </>
   );
 };

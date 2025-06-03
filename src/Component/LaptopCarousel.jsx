@@ -11,8 +11,7 @@ const LaptopCarousel = () => {
   const laptops = [
     {
       id: 1,
-      image:
-        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=250&fit=crop",
+      image: "First.png",
       author: "Shyam Sharma",
       date: "20 April 2024",
       title: "Best Laptops Under Rs.85,000 in Nepal.....",
@@ -21,8 +20,7 @@ const LaptopCarousel = () => {
     },
     {
       id: 2,
-      image:
-        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400&h=250&fit=crop",
+      image: "Second.png",
       author: "Shyam Sharma",
       date: "20 April 2024",
       title: "Best Gaming Laptops Under Rs.85,000 in Nepal.....",
@@ -31,8 +29,7 @@ const LaptopCarousel = () => {
     },
     {
       id: 3,
-      image:
-        "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400&h=250&fit=crop",
+      image: "Thirds.png",
       author: "Shyam Sharma",
       date: "20 April 2024",
       title: "Best Business Laptops Under Rs.85,000 in Nepal.....",
@@ -51,8 +48,7 @@ const LaptopCarousel = () => {
     },
     {
       id: 5,
-      image:
-        "https://images.unsplash.com/photo-1515378791036-0648a814c963?w=400&h=250&fit=crop",
+      image: "Blank.webp",
       author: "Shyam Sharma",
       date: "17 April 2024",
       title: "Best 2-in-1 Laptops Under Rs.85,000 in Nepal.....",
@@ -108,7 +104,7 @@ const LaptopCarousel = () => {
   const getVisibleItems = () => laptops.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 py-12 bg-white">
+    <div className="w-full max-w-7xl mx-auto px-6 my-12 bg-white">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-3xl font-bold text-gray-800">You may like also:</h2>
