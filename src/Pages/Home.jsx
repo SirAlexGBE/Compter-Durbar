@@ -1,6 +1,5 @@
 import React from "react";
 
-import Navbar from "../Component/Navbar";
 import LaptopCarousel from "../Component/LaptopCarousel";
 
 import News from "../Components/News";
@@ -11,8 +10,6 @@ const Home = () => {
     <>
       <News />
       <LaptopCarousel />
-
-      {/* <MacBookProductListing /> */}
 
       <Footer />
     </>
