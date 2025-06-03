@@ -1,5 +1,5 @@
 import React from "react";
-import MacBookProductListing from "../Components/MacbookProductListing";
+// import MacBookProductListing from "../Components/MacbookProductListing";
 import News from "../Components/News";
 import Footer from "../Components/Footer";
 
