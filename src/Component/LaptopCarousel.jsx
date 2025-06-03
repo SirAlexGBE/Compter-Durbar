@@ -104,7 +104,7 @@ const LaptopCarousel = () => {
   const getVisibleItems = () => laptops.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 my-12 bg-white">
+    <div className="w-full max-w-7xl mx-auto px-6 my-12 bg-white mb-5">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-3xl font-bold text-gray-800">You may like also:</h2>

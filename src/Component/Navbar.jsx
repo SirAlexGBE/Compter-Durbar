@@ -13,7 +13,7 @@ export default function Navbar() {
           placeholder="Search products here..."
           className="flex-1 px-4 py-2 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-[10px]"
         />
-        <button className="bg-blue-900 p-2 px-3 ml-2 rounded-[10px] text-white hover:bg-blue-800">
+        <button className="bg-[#041E42] p-2 px-3 ml-2 rounded-[10px] text-white ">
           <Search size={20} />
         </button>
       </div>
