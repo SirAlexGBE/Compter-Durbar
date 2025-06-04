@@ -7,8 +7,6 @@ import News from "../Components/News";
 const Home = () => {
   return (
     <>
-      <LaptopCarousel />
-
       {/* <MacBookProductListing /> */}
       <News />
       <LaptopCarousel />
