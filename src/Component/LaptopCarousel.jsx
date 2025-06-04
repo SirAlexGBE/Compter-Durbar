@@ -91,7 +91,7 @@ const LaptopCarousel = () => {
         "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
       author: "Shyam Sharma",
       date: "13 April 2024",
-      title: "Best Student Laptops Under Rs.85,000 in Nepal.....",
+      title: "Best Student Laptops Under Rs.85,000 in Nepal......",
       description:
         "If you're searching for the best student laptops under Rs. 85,000 in Nepal, there are several excellent options that cater to education, and",
     },
@@ -104,85 +104,92 @@ const LaptopCarousel = () => {
   const getVisibleItems = () => laptops.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 my-12 bg-white">
+    <div className="w-full  my-12 bg-white mb-5">
       {/* Header */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-3xl font-bold text-gray-800">You may like also:</h2>
-        <div className="flex">
-          <button
-            onClick={scrollLeft}
-            disabled={currentIndex === 0}
-            className={`p-2 rounded-full   ${
-              currentIndex === 0
-                ? "opacity-40 cursor-not-allowed"
-                : "hover:shadow-md"
-            }`}
-          >
-            <img src={leftArrow} alt="Left" className="w-[30px] h-[30px]" />
-          </button>
-          <button
-            onClick={scrollRight}
-            disabled={currentIndex >= maxIndex}
-            className={`p-2 rounded-full   ${
-              currentIndex >= maxIndex
-                ? "opacity-40 cursor-not-allowed"
-                : "hover:shadow-md"
-            }`}
-          >
-            <img src={rightArrow} alt="Right" className="w-[35px] h-[35px]" />
-          </button>
-        </div>
-      </div>
-
-      {/* Cards */}
-      <div className="flex gap-6 overflow-hidden my-10  h-[520px] ">
-        {getVisibleItems().map((laptop) => (
-          <div
-            key={laptop.id}
-            className=" bg-white rounded-xl shadow-xl  hover:shadow-lg border border-gray-200 transition-all duration-300 h-[480px] w-[371px] ml-5"
-          >
-            <div className="overflow-hidden rounded-t-xl">
-              <img
-                src={laptop.image}
-                alt={laptop.title}
-                className="w-[371px] h-[245px] object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="p-5 pb-8">
-              <div className="flex justify-between text-sm text-gray-500 mb-3">
-                <span className="font-medium">{laptop.author}</span>
-                <span>{laptop.date}</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                {laptop.title}
-              </h3>
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">
-                {laptop.description}
-              </p>
-              <button className="flex items-center gap-2 text-black text-sm font-medium group">
-                Read More
-                <span className="group-hover:translate-x-1 transition-transform duration-200">
-                  →
-                </span>
-              </button>
-            </div>
+      <div className="w-fit ">
+        <div className="flex justify-between items-center mr-[-70px]">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-800 ml-20">
+              You may like also:
+            </h2>
           </div>
-        ))}
-      </div>
 
-      {/* Dots */}
-      <div className="flex justify-center gap-4 my-10">
-        {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              index === currentIndex
-                ? "bg-yellow-400"
-                : "bg-gray-300 hover:bg-gray-400"
-            }`}
-          />
-        ))}
+          <div className="flex justify-end">
+            <button
+              onClick={scrollLeft}
+              disabled={currentIndex === 0}
+              className={`p-2 rounded-full   ${
+                currentIndex === 0
+                  ? "opacity-40 cursor-not-allowed"
+                  : "hover:shadow-md"
+              }`}
+            >
+              <img src={leftArrow} alt="Left" className="w-[30px] h-[30px] " />
+            </button>
+            <button
+              onClick={scrollRight}
+              disabled={currentIndex >= maxIndex}
+              className={`p-2 rounded-full   ${
+                currentIndex >= maxIndex
+                  ? "opacity-40 cursor-not-allowed"
+                  : "hover:shadow-md"
+              }`}
+            >
+              <img src={rightArrow} alt="Right" className="w-[35px] h-[35px]" />
+            </button>
+          </div>
+        </div>
+
+        {/* Cards */}
+        <div className="flex gap-6 overflow-hidden my-10  h-[520px] ml-25 ">
+          {getVisibleItems().map((laptop) => (
+            <div
+              key={laptop.id}
+              className=" bg-white rounded-xl shadow-xl  hover:shadow-lg border border-gray-200 transition-all duration-300 h-[480px] w-[371px] ml-5"
+            >
+              <div className="overflow-hidden rounded-t-xl">
+                <img
+                  src={laptop.image}
+                  alt={laptop.title}
+                  className="w-[371px] h-[245px] object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-5 pb-8">
+                <div className="flex justify-between text-sm text-gray-600 mb-3">
+                  <span className="font-medium">{laptop.author}</span>
+                  <span>{laptop.date}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                  {laptop.title}
+                </h3>
+                <p className="text-gray-700 text-sm mb-4 line-clamp-3 leading-relaxed">
+                  {laptop.description}
+                </p>
+                <button className="flex items-center gap-2 text-black text-sm font-medium group">
+                  Read More
+                  <span className="group-hover:translate-x-1 transition-transform duration-200">
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-4 my-10 ml-25">
+          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                index === currentIndex
+                  ? "bg-yellow-400"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

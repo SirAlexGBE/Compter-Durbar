@@ -3,10 +3,10 @@ import { ArrowRight } from "lucide-react";
 
 export default function News() {
   return (
-    <div className='w-full p-6'>
+    <div className='w-full p-6 px-5 pl-10 mt-15'>
       <div className='flex flex-col md:flex-row bg-white rounded-xl overflow-hidden'>
         {/* Left Side - Yellow Background with Image */}
-        <div className='w-full md:w-2/5 bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 relative flex items-center justify-center min-h-[200px]'>
+        <div className='w-full md:w-2/5  relative flex items-center justify-center min-h-[200px]'>
           {/* Title on Image */}
 
           {/* Student Image */}
@@ -29,7 +29,7 @@ export default function News() {
             </span>
 
             <h3 className='text-2xl md:text-3xl font-bold mb-4 text-gray-800 leading-tight'>
-              Best Budget Laptops for student in Nepal
+              Best-Budget Laptops for student in Nepal
             </h3>
 
             <p className='text-gray-600 mb-6 leading-relaxed text-base'>
