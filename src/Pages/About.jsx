@@ -2,7 +2,11 @@ import React from "react";
 import WhatWeOffer from "../Components/About/WhatWeOffer";
 
 const About = () => {
-  return <WhatWeOffer />;
+  return (
+    <div>
+      <WhatWeOffer />
+    </div>
+  );
 };
 
 export default About;
