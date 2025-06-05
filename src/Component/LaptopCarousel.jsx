@@ -91,7 +91,7 @@ const LaptopCarousel = () => {
         "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
       author: "Shyam Sharma",
       date: "13 April 2024",
-      title: "Best Student Laptops Under Rs.85,000 in Nepal.....",
+      title: "Best Student Laptops Under Rs.85,000 in Nepal......",
       description:
         "If you're searching for the best student laptops under Rs. 85,000 in Nepal, there are several excellent options that cater to education, and",
     },
@@ -104,9 +104,9 @@ const LaptopCarousel = () => {
   const getVisibleItems = () => laptops.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="w-[1400PX]  my-12 bg-white mb-5">
+    <div className="w-full  my-12 bg-white mb-5">
       {/* Header */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 mr-20">
         <h2 className="text-3xl font-bold text-gray-800 ml-20">
           You may like also:
         </h2>
