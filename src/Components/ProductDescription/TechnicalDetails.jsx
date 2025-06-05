@@ -89,17 +89,18 @@ const TechnicalDetails = () => {
                   </div>
                 </div>
               ))}
+              <div className='mt-8 text-left'>
+                <button className='text-blue-600 text-sm hover:text-blue-700 hover:underline transition-colors duration-150'>
+                  See more details ›
+                </button>
+              </div>
             </>
           )}
+
+          {/* See More Button */}
+
           {currentTab.name === "Similar Products" && <SimilarProducts />}
           {currentTab.name === "Comments" && <Comments />}
-        </div>
-
-        {/* See More Button */}
-        <div className='mt-8 text-left'>
-          <button className='text-blue-600 text-sm hover:text-blue-700 hover:underline transition-colors duration-150'>
-            See more details ›
-          </button>
         </div>
       </div>
     </div>
