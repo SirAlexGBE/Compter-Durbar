@@ -9,8 +9,6 @@ const ProductDescription = () => {
     <>
       <MacBookProductListing />
       <TechnicalDetails />
-      <SimilarProducts />
-      <Comments />
     </>
   );
 };
