@@ -1,20 +1,21 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function News() {
   return (
-    <div className='w-full p-6 px-5 pl-10 mt-15'>
-      <div className='flex flex-col md:flex-row bg-white rounded-xl overflow-hidden'>
+    <div className='w-full p-6  mt-5'>
+      <div className='flex flex-col md:flex-row bg-white rounded-xl overflow-hidden pl-5'>
         {/* Left Side - Yellow Background with Image */}
-        <div className='w-full md:w-2/5  relative flex items-center justify-center min-h-[200px]'>
+        <div className='w-full   relative flex items-center  min-h-[200px]'>
           {/* Title on Image */}
 
           {/* Student Image */}
-          <div className='flex-1 flex items-center justify-center'>
+          <div className='bg-[#fff6f6]  rounded-xl  shadow-md '>
             <img
-              src='image.png'
-              alt='Student with laptop'
-              className='max-w-full max-h-full object-contain'
+              src='image.png' // Replace with your actual image path
+              alt='Best budget laptops'
+              className='rounded-lg   w-[725px]'
             />
           </div>
 
@@ -22,7 +23,7 @@ export default function News() {
         </div>
 
         {/* Right Side - White Background with Content */}
-        <div className='w-full md:w-3/5 p-8 flex flex-col justify-center   min-h-[200px] ml-4'>
+        <div className='w-full md:w-5/6 p-8 mt-5 flex flex-col justify-center   min-h-[200px] ml-4'>
           <div className='bg-[#FDF9F9] py-2 rounded px-3'>
             <span className='bg-blue-700 text-white px-6 py-1 rounded-full text-sm mb-4 w-fit'>
               News
@@ -39,12 +40,12 @@ export default function News() {
               from basic tasks like note-taking and web browsing to
             </p>
 
-            <a
-              href='#'
+            <Link
+              to='/bloglanding'
               className='text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center group transition-colors'>
               Read More
               <ArrowRight className='ml-2 w-4 h-4 transition-transform group-hover:translate-x-1' />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
