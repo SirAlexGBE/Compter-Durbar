@@ -2,22 +2,26 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Navbar from "./Component/Navbar";
+import Navbar from "./Components/Navbar";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Explore from "./Pages/Explore";
+
+import Footer from "./Components/Footer";
+import Blog from "./Pages/Blog";
+import BlogLanding from "./Pages/BlogLanding";
+import ProductDescription from "./Pages/ProductDescription";
+import About from "./Pages/ABout";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Explore" element={<Explore />} />
-        {/* Add more routes as needed */}
+        <Route path='/' element={<Blog />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/bloglanding' element={<BlogLanding />} />
+        <Route path='/productdescription' element={<ProductDescription />} />
       </Routes>
+      <Footer />
     </>
   );
 }

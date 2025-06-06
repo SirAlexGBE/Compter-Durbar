@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Left from "../assets/Left.png";
-import right from "../assets/right.png";
+import Left from "../../assets/Left.png";
+import right from "../../assets/right.png";
 
 const leftArrow = Left;
 const rightArrow = right;
@@ -126,14 +126,14 @@ const LaptopCarousel = () => {
     laptops.slice(currentIndex, currentIndex + itemsPerView);
 
   return (
-    <div className="w-full max-w-7xl mx-auto my-12 bg-white mb-5">
+    <div className='w-full max-w-7xl mx-auto my-12 bg-white mb-5'>
       {/* Header */}
-      <div className="w-full px-6">
-        <div className="flex justify-between items-center py-6">
-          <h2 className="text-3xl font-bold text-gray-900">
+      <div className='w-full px-6'>
+        <div className='flex justify-between items-center py-6'>
+          <h2 className='text-3xl font-bold text-gray-900'>
             You may like also:
           </h2>
-          <div className="flex gap-2">
+          <div className='flex gap-2'>
             <button
               onClick={scrollLeft}
               disabled={currentIndex === 0}
@@ -141,9 +141,8 @@ const LaptopCarousel = () => {
                 currentIndex === 0
                   ? "opacity-40 cursor-not-allowed"
                   : "hover:bg-gray-200"
-              } transition-colors duration-200`}
-            >
-              <img src={leftArrow} alt="Left" className="w-[25px] h-[25px]" />
+              } transition-colors duration-200`}>
+              <img src={leftArrow} alt='Left' className='w-[25px] h-[25px]' />
             </button>
             <button
               onClick={scrollRight}
@@ -152,42 +151,40 @@ const LaptopCarousel = () => {
                 currentIndex >= maxIndex
                   ? "opacity-40 cursor-not-allowed"
                   : "hover:bg-gray-200"
-              } transition-colors duration-200`}
-            >
-              <img src={rightArrow} alt="Right" className="w-[30px] h-[30px]" />
+              } transition-colors duration-200`}>
+              <img src={rightArrow} alt='Right' className='w-[30px] h-[30px]' />
             </button>
           </div>
         </div>
 
         {/* Cards */}
-        <div className="flex gap-6 overflow-visible my-10 px-4 h-auto max-h-[520px]">
+        <div className='flex gap-6 overflow-visible my-10 px-4 h-auto max-h-[520px]'>
           {getVisibleItems().map((laptop) => (
             <div
               key={laptop.id}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl border border-gray-200 transition-all duration-300 flex-shrink-0 
-                         w-[90%] sm:w-[48%] md:w-[47%] lg:w-[32%] xl:w-[31%] h-auto max-h-[500px]"
-            >
-              <div className="overflow-hidden rounded-t-xl">
+              className='bg-white rounded-xl shadow-lg hover:shadow-xl border border-gray-200 transition-all duration-300 flex-shrink-0 
+                         w-[90%] sm:w-[48%] md:w-[47%] lg:w-[32%] xl:w-[31%] h-auto max-h-[500px]'>
+              <div className='overflow-hidden rounded-t-xl'>
                 <img
                   src={laptop.image}
                   alt={laptop.title}
-                  className="w-full h-[180px] sm:h-[200px] md:h-[210px] object-cover hover:scale-105 transition-transform duration-300"
+                  className='w-full h-[180px] sm:h-[200px] md:h-[210px] object-cover hover:scale-105 transition-transform duration-300'
                 />
               </div>
-              <div className="p-5 pb-6">
-                <div className="flex justify-between text-xs text-gray-600 mb-3">
-                  <span className="font-medium">{laptop.author}</span>
+              <div className='p-5 pb-6'>
+                <div className='flex justify-between text-xs text-gray-600 mb-3'>
+                  <span className='font-medium'>{laptop.author}</span>
                   <span>{laptop.date}</span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 leading-tight">
+                <h3 className='text-lg font-bold text-gray-900 mb-3 line-clamp-2 leading-tight'>
                   {laptop.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed">
+                <p className='text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed'>
                   {laptop.description}
                 </p>
-                <button className="flex items-center gap-2 text-black text-sm font-semibold group mt-auto">
+                <button className='flex items-center gap-2 text-black text-sm font-semibold group mt-auto'>
                   Read More
-                  <span className="group-hover:translate-x-1 transition-transform duration-200">
+                  <span className='group-hover:translate-x-1 transition-transform duration-200'>
                     →
                   </span>
                 </button>
@@ -197,7 +194,7 @@ const LaptopCarousel = () => {
         </div>
 
         {/* Dots */}
-        <div className="flex justify-center gap-2 pb-8">
+        <div className='flex justify-center gap-2 pb-8'>
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
