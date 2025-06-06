@@ -9,17 +9,19 @@ import Footer from "./Components/Footer";
 import Blog from "./Pages/Blog";
 import BlogLanding from "./Pages/BlogLanding";
 import ProductDescription from "./Pages/ProductDescription";
-import About from "./Pages/ABout";
+import About from "./Pages/About";
+import SignUpPage from "./Pages/SignUp/SignUpPage";
 
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Blog />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/bloglanding' element={<BlogLanding />} />
-        <Route path='/productdescription' element={<ProductDescription />} />
+        <Route path="/" element={<Blog />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/bloglanding" element={<BlogLanding />} />
+        <Route path="/productdescription" element={<ProductDescription />} />
+        <Route path="/SignUp" element={<SignUpPage />} />
       </Routes>
       <Footer />
     </>
