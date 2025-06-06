@@ -9,9 +9,12 @@ import Footer from "./Components/Footer";
 import Blog from "./Pages/Blog";
 import BlogLanding from "./Pages/BlogLanding";
 import ProductDescription from "./Pages/ProductDescription";
-import About from "./Pages/ABout";
+
 import Home from "./Pages/Home";
 import Navlink from "./Components/Navlink";
+
+import About from "./Pages/About";
+import SignUpPage from "./Pages/SignUp/SignUpPage";
 
 function App() {
   return (
@@ -20,10 +23,13 @@ function App() {
       <Navlink />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/blog' element={<Blog />} />
+
+        <Route path='/' element={<Blog />} />
         <Route path='/about' element={<About />} />
         <Route path='/bloglanding' element={<BlogLanding />} />
         <Route path='/productdescription' element={<ProductDescription />} />
+        <Route path='/signup' element={<SignUpPage />} />
+        {/* Add more routes as needed */}
       </Routes>
       <Footer />
     </>

@@ -1,11 +1,12 @@
 import { Search, ShoppingCart, Heart, User, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className='w-full shadow-md bg-white px-4 sm:px-6 py-4'>
+    <div className='w-full shadow-md bg-white px-4 sm:px-6  py-4'>
       {/* Desktop Layout */}
       <div className='hidden lg:flex items-center justify-between'>
         {/* Logo */}
@@ -34,7 +35,9 @@ export default function Navbar() {
 
           <div className='flex items-center cursor-pointer space-x-1'>
             <User size={20} />
-            <span className='text-sm hover:underline'>Sign In/Register</span>
+            <Link to={"/signup"} className='text-sm hover:underline'>
+              Sign In/Register
+            </Link>
           </div>
         </div>
       </div>
@@ -105,10 +108,12 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className='mt-4 py-4 border-t border-gray-200'>
-            <div className='flex items-center cursor-pointer space-x-2'>
+            <Link
+              to={"/SignUp"}
+              className='flex items-center cursor-pointer space-x-2'>
               <User size={20} />
               <span className='text-sm hover:underline'>Sign In/Register</span>
-            </div>
+            </Link>
           </div>
         )}
       </div>
