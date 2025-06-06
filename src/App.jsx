@@ -10,13 +10,17 @@ import Blog from "./Pages/Blog";
 import BlogLanding from "./Pages/BlogLanding";
 import ProductDescription from "./Pages/ProductDescription";
 import About from "./Pages/ABout";
+import Home from "./Pages/Home";
+import Navlink from "./Components/Navlink";
 
 function App() {
   return (
     <>
       <Navbar />
+      <Navlink />
       <Routes>
-        <Route path='/' element={<Blog />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/blog' element={<Blog />} />
         <Route path='/about' element={<About />} />
         <Route path='/bloglanding' element={<BlogLanding />} />
         <Route path='/productdescription' element={<ProductDescription />} />
