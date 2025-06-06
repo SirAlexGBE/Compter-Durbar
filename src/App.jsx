@@ -9,6 +9,10 @@ import Footer from "./Components/Footer";
 import Blog from "./Pages/Blog";
 import BlogLanding from "./Pages/BlogLanding";
 import ProductDescription from "./Pages/ProductDescription";
+
+import Home from "./Pages/Home";
+import Navlink from "./Components/Navlink";
+
 import About from "./Pages/About";
 import SignUpPage from "./Pages/SignUp/SignUpPage";
 
@@ -16,12 +20,16 @@ function App() {
   return (
     <>
       <Navbar />
+      <Navlink />
       <Routes>
-        <Route path="/" element={<Blog />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/bloglanding" element={<BlogLanding />} />
-        <Route path="/productdescription" element={<ProductDescription />} />
-        <Route path="/SignUp" element={<SignUpPage />} />
+        <Route path='/' element={<Home />} />
+
+        <Route path='/' element={<Blog />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/bloglanding' element={<BlogLanding />} />
+        <Route path='/productdescription' element={<ProductDescription />} />
+        <Route path='/signup' element={<SignUpPage />} />
+        {/* Add more routes as needed */}
       </Routes>
       <Footer />
     </>
