@@ -1,9 +1,9 @@
-import { useState } from "react";
+import {useState} from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import { Routes, Route } from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
 import Footer from "./Components/Footer";
 import Blog from "./Pages/Blog";
@@ -13,8 +13,12 @@ import ProductDescription from "./Pages/ProductDescription";
 import Home from "./Pages/Home";
 
 import About from "./Pages/About";
-import SignUpPage from "./Pages/SignUp/SignUpPage";
+
+
 import SearchBar from "./Components/SearchBar";
+
+import SignUpPage from "./Pages/SignUp/SignUpPage3";
+
 
 function App() {
   return (
@@ -22,13 +26,13 @@ function App() {
       <Navbar />
       <SearchBar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path="/" element={<Home />} />
 
-        <Route path='/' element={<Blog />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/bloglanding' element={<BlogLanding />} />
-        <Route path='/productdescription' element={<ProductDescription />} />
-        <Route path='/signup' element={<SignUpPage />} />
+        <Route path="/" element={<Blog />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/bloglanding" element={<BlogLanding />} />
+        <Route path="/productdescription" element={<ProductDescription />} />
+        <Route path="/signup" element={<SignUpPage />} />
         {/* Add more routes as needed */}
       </Routes>
       <Footer />
