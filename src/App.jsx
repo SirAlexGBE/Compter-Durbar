@@ -11,16 +11,16 @@ import BlogLanding from "./Pages/BlogLanding";
 import ProductDescription from "./Pages/ProductDescription";
 
 import Home from "./Pages/Home";
-import Navlink from "./Components/Navlink";
 
 import About from "./Pages/About";
 import SignUpPage from "./Pages/SignUp/SignUpPage";
+import SearchBar from "./Components/SearchBar";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Navlink />
+      <SearchBar />
       <Routes>
         <Route path='/' element={<Home />} />
 
