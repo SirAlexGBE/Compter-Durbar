@@ -21,13 +21,13 @@ const Navbar = () => {
   return (
     <nav className='w-full bg-white sticky top-0 z-50 border-b border-gray-200 '>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-end justify-between h-24 pb-2'>
+        <div className='flex items-end justify-between h-20 pb-2'>
           {/* Logo - Positioned at start point */}
           <a href='/' className='flex-shrink-0 mr-4'>
             <img
               src='logo.png'
               alt='Durbar Logo'
-              className='w-22 h-20 object-contain max-w-none'
+              className=' h-18 object-contain max-w-none'
             />
           </a>
 
