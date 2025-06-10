@@ -14,8 +14,6 @@ import Home from "./Pages/Home";
 
 import About from "./Pages/About";
 
-import SearchBar from "./Components/SearchBar";
-
 import SignUpPage from "./Pages/SignUpPage";
 import LoginPage from "./Pages/Login";
 import ResetPasswordPage from "./Components/Auth/Forget";
@@ -25,7 +23,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <SearchBar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/" element={<Blog />} />
