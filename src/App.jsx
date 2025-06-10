@@ -18,6 +18,8 @@ import SearchBar from "./Components/SearchBar";
 
 import SignUpPage from "./Pages/SignUpPage";
 import LoginPage from "./Pages/Login";
+import ResetPasswordPage from "./Components/Auth/Forget";
+import ForgetPasswordPage from "./Pages/ForgetPasswordPage";
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="forget" element={<ForgetPasswordPage />} />
       </Routes>
       <Footer />
     </>
