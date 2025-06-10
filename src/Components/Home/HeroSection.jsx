@@ -1,60 +1,196 @@
+// // // import React, { useEffect, useState } from "react";
+
+// // // // Define images from public folder
+// // // const images = ["/slider1.png", "/slider1.png", "/slider1.png"];
+
+// // // const HeroSection = () => {
+// // //   const [current, setCurrent] = useState(0);
+// // //   const length = images.length;
+
+// // //   // Auto-slide effect
+// // //   useEffect(() => {
+// // //     const interval = setInterval(() => {
+// // //       setCurrent((prev) => (prev + 1) % length);
+// // //     }, 4000);
+// // //     return () => clearInterval(interval);
+// // //   }, [length]);
+
+// // //   return (
+// // //     <div className='relative w-full'>
+// // //       {/* Main container with fixed aspect ratio */}
+// // //       <section className='w-full h-[calc(100vh-80px)] min-h-[500px] relative overflow-hidden'>
+// // //         {/* Image slider */}
+// // //         {images.map((img, index) => (
+// // //           <div
+// // //             key={index}
+// // //             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+// // //               index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+// // //             }`}>
+// // //             <img
+// // //               src={img}
+// // //               alt={`Slide ${index + 1}`}
+// // //               className='w-full h-full object-cover'
+// // //               loading='lazy'
+// // //             />
+// // //           </div>
+// // //         ))}
+// // //       </section>
+
+// // //       {/* Bottom spacing container */}
+// // //       <div className='w-full h-50  bg-gray-200' />
+// // //     </div>
+// // //   );
+// // // };
+
+// // // export default HeroSection;
+
+// // import React, { useEffect, useState } from "react";
+
+// // // Images from public folder
+// // const images = ["/slider1.png", "/slider1.png", "/slider1.png"];
+
+// // const HeroSection = () => {
+// //   const [current, setCurrent] = useState(0);
+// //   const length = images.length;
+
+// //   // Auto-slide effect
+// //   useEffect(() => {
+// //     const interval = setInterval(() => {
+// //       setCurrent((prev) => (prev + 1) % length);
+// //     }, 4000);
+// //     return () => clearInterval(interval);
+// //   }, [length]);
+
+// //   return (
+// //     <div className='relative w-full'>
+// //       {/* Main container with responsive aspect ratio */}
+// //       <section
+// //         className='
+// //           w-full
+// //           h-[calc(100vh-80px)] min-h-[300px]  /* min height smaller for mobiles */
+// //           md:min-h-[500px]  /* default min height for medium and up */
+// //           relative
+// //           overflow-hidden
+// //         '>
+// //         {/* Image slider */}
+// //         {images.map((img, index) => (
+// //           <div
+// //             key={index}
+// //             className={`
+// //               absolute inset-0
+// //               transition-opacity duration-1000 ease-in-out
+// //               ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}
+// //             `}>
+// //             <img
+// //               src={img}
+// //               alt={`Slide ${index + 1}`}
+// //               className='
+// //                 w-full
+// //                 h-full
+// //                 object-cover
+// //                 object-center
+// //               '
+// //               loading='lazy'
+// //             />
+// //           </div>
+// //         ))}
+// //       </section>
+
+// //       {/* Bottom spacing container */}
+// //       <div className='w-full h-50 md:h-20 bg-gray-200' />
+// //     </div>
+// //   );
+// // };
+
+// // export default HeroSection;
+// import React, { useEffect, useState } from "react";
+
+// // Images from public folder
+// const images = ["/slider1.png", "/slider1.png", "/slider1.png"];
+
+// const HeroSection = () => {
+//   const [current, setCurrent] = useState(0);
+//   const length = images.length;
+
+//   // Auto-slide effect
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrent((prev) => (prev + 1) % length);
+//     }, 4000);
+//     return () => clearInterval(interval);
+//   }, [length]);
+
+//   return (
+//     <div className='relative w-full'>
+//       {/* Main container with responsive aspect ratio */}
+//       <section className='w-full h-[calc(100vh-80px)] min-h-[300px] md:min-h-[500px] relative overflow-hidden'>
+//         {/* Image slider */}
+//         {images.map((img, index) => (
+//           <div
+//             key={index}
+//             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out
+//               ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
+//             <img
+//               src={img}
+//               alt={`Slide ${index + 1}`}
+//               className='w-full h-full object-cover object-center'
+//               loading='lazy'
+//             />
+//           </div>
+//         ))}
+//       </section>
+
+//       {/* Bottom spacing container with responsive height */}
+//       <div className='w-full h-[120px] sm:h-[100px] md:h-[80px] lg:h-[200px] bg-gray-200' />
+//     </div>
+//   );
+// };
+
+// export default HeroSection;
 import React, { useEffect, useState } from "react";
 
-const images = ["slider1.png", "slider1.png", "slider1.png"];
+// Images from public folder
+const images = ["/slider1.png", "/slider1.png", "/slider1.png"];
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
   const length = images.length;
 
+  // Auto-slide effect
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % length);
-    }, 4000); // change every 4 seconds
+    }, 1000);
     return () => clearInterval(interval);
   }, [length]);
 
-  const nextSlide = () => setCurrent((current + 1) % length);
-  const prevSlide = () => setCurrent((current - 1 + length) % length);
-  const goToSlide = (index) => setCurrent(index);
-
   return (
-    <section className='w-full h-screen min-h-[500px] relative overflow-hidden'>
-      {images.map((img, index) => (
-        <img
-          key={index}
-          src={img}
-          alt={`Slide ${index + 1}`}
-          className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
-            index === current ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-        />
-      ))}
-
-      {/* Arrows */}
-      <button
-        onClick={prevSlide}
-        className='absolute left-5 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white text-black p-2 rounded-full shadow z-20'>
-        &#10094;
-      </button>
-      <button
-        onClick={nextSlide}
-        className='absolute right-5 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white text-black p-2 rounded-full shadow z-20'>
-        &#10095;
-      </button>
-
-      {/* Dots */}
-      <div className='absolute bottom-5 left-1/2 -translate-x-1/2 flex space-x-2 z-20'>
-        {images.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => goToSlide(idx)}
-            className={`w-3 h-3 rounded-full ${
-              current === idx ? "bg-white" : "bg-white/50"
-            }`}
-          />
+    <div className='relative w-full'>
+      {/* Main container with responsive aspect ratio */}
+      <section className='w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[calc(100vh-80px)] relative overflow-hidden'>
+        {/* Image slider */}
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out 
+              ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
+            <img
+              src={img}
+              alt={`Slide ${index + 1}`}
+              className='w-full h-full object-fill object-center'
+              loading='lazy'
+              sizes='(max-width: 640px) 70vw,
+                     (max-width: 768px) 100vw,
+                     (max-width: 1024px) 100vw,
+                     100vw'
+            />
+          </div>
         ))}
-      </div>
-    </section>
+      </section>
+
+      {/* Bottom spacing container with responsive height */}
+      <div className='w-full h-[120px] sm:h-[100px] md:h-[80px] lg:h-[200px] bg-gray-200' />
+    </div>
   );
 };
 
