@@ -16,12 +16,19 @@ import About from "./Pages/About";
 
 import SignUpPage from "./Pages/SignUp/SignUpPage3";
 
+import SearchBar from "./Components/SearchBar";
+
+import SignUpPage from "./Pages/SignUpPage";
+import LoginPage from "./Pages/Login";
+import ResetPasswordPage from "./Components/Auth/Forget";
+import ForgetPasswordPage from "./Pages/ForgetPasswordPage";
+
 function App() {
   return (
     <>
       <Navbar />
 
-      <Routes>
+      <Routes
         <Route path='/' element={<Home />} />
 
         <Route path='/' element={<Blog />} />
@@ -30,6 +37,16 @@ function App() {
         <Route path='/productdescription' element={<ProductDescription />} />
         <Route path='/signup' element={<SignUpPage />} />
         {/* Add more routes as needed */}
+
+        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Blog />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/bloglanding" element={<BlogLanding />} />
+        <Route path="/productdescription" element={<ProductDescription />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="forget" element={<ForgetPasswordPage />} />
       </Routes>
       <Footer />
     </>
