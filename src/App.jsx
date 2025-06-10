@@ -14,11 +14,10 @@ import Home from "./Pages/Home";
 
 import About from "./Pages/About";
 
-
 import SearchBar from "./Components/SearchBar";
 
-import SignUpPage from "./Pages/SignUp/SignUpPage3";
-
+import SignUpPage from "./Pages/SignUpPage";
+import LoginPage from "./Pages/Login";
 
 function App() {
   return (
@@ -27,13 +26,13 @@ function App() {
       <SearchBar />
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/bloglanding" element={<BlogLanding />} />
         <Route path="/productdescription" element={<ProductDescription />} />
         <Route path="/signup" element={<SignUpPage />} />
-        {/* Add more routes as needed */}
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
     </>
