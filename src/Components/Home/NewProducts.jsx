@@ -80,19 +80,19 @@ const NewProducts = () => {
 
           <div className="flex gap-8">
             {/* Left Sidebar - Legion Pro */}
-            <div className="w-100 bg-gray-100 rounded-2xl p-6">
-              <div className="mb-4">
+            <div className="w-100 bg-gray-100 rounded-2xl ">
+              <div className="mb-4 p-6">
                 <span className=" text-red-500  py-3 mb-5 rounded-full text-sm font-medium">
                   NEW ARRIVAL
                 </span>
               </div>
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-tight pl-7">
                 Lenovo Legion <br />
                 Pro
               </h2>
 
-              <p className="text-gray-700 mb-10 text-lg">
+              <p className="text-gray-700 mb-10 text-lg pl-7">
                 Don't miss the last <br /> Opportunity
               </p>
 
@@ -100,13 +100,14 @@ const NewProducts = () => {
                 <img
                   src="/legion.png"
                   alt="Lenovo Legion Pro"
-                  className="w-full h-75 object-cover rounded-lg"
+                  className="w-fit h-75 p-4 object-cover rounded-lg"
                 />
               </div>
-
-              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-full font-medium text-lg transition-colors">
-                Shop Now
-              </button>
+              <div className="flex justify-center">
+                <button className="w-fit  left-2/3  bg-blue-500 hover:bg-blue-600 text-white py-3 px-16 rounded-full font-medium text-lg transition-colors">
+                  Shop Now
+                </button>
+              </div>
             </div>
 
             {/* Right Grid - Products */}
