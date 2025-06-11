@@ -1,11 +1,5 @@
-import React from "react";
-
-import {useState} from "react";
+import React, {useState} from "react";
 import {ChevronUp, ChevronDown} from "lucide-react";
-import {Button} from "@/components/ui/button";
-import {Checkbox} from "@/components/ui/checkbox";
-import {Input} from "@/components/ui/input";
-import {Slider} from "@/components/ui/slider";
 
 export default function FilterComponent() {
   const [expandedSections, setExpandedSections] = useState({
@@ -20,50 +14,17 @@ export default function FilterComponent() {
   });
 
   const [filters, setFilters] = useState({
-    brand: {
-      asus: false,
-      acer: false,
-      apple: false,
-      dell: false,
-    },
-    gpuBrand: {
-      nvidia: true,
-      intel: true,
-      amd: false,
-      apple: false,
-    },
-    ram: {
-      "32gb": false,
-      "16gb": false,
-      "12gb": true,
-      "8gb": false,
-    },
-    driveSize: {
-      "512gb": false,
-      "256gb": false,
-      "64gb": false,
-      "128gb": true,
-    },
-    popularity: {
-      common: false,
-      popular: false,
-    },
-    screenSize: {
-      "13-13.9": false,
-      "14-14.9": false,
-      "15-15.9": true,
-      "16-16.9": false,
-    },
-    processor: {
-      "intel-i5": false,
-      "intel-i7": false,
-      "intel-i9": false,
-      "amd-ryzen9": true,
-    },
+    brand: [],
+    gpuBrand: ["NVIDIA", "Intel"],
+    ram: ["12 GB"],
+    driveSize: ["128GB"],
+    price: "",
+    popularity: [],
+    screenSize: ['15" - 15.9"'],
+    processor: ["AMD Ryzen 9"],
   });
 
-  const [priceRange, setPriceRange] = useState([500]);
-  const [priceInput, setPriceInput] = useState("");
+  const [priceRange, setPriceRange] = useState(50);
 
   const toggleSection = (section) => {
     setExpandedSections((prev) => ({
@@ -72,160 +33,171 @@ export default function FilterComponent() {
     }));
   };
 
-  const handleFilterChange = (category, item, checked) => {
+  const handleCheckboxChange = (category, value) => {
     setFilters((prev) => ({
       ...prev,
-      [category]: {
-        ...prev[category],
-        [item]: checked,
-      },
+      [category]: prev[category].includes(value) ? prev[category].filter((item) => item !== value) : [...prev[category], value],
     }));
   };
 
   const clearAllFilters = () => {
     setFilters({
-      brand: {
-        asus: false,
-        acer: false,
-        apple: false,
-        dell: false,
-      },
-      gpuBrand: {
-        nvidia: false,
-        intel: false,
-        amd: false,
-        apple: false,
-      },
-      ram: {
-        "32gb": false,
-        "16gb": false,
-        "12gb": false,
-        "8gb": false,
-      },
-      driveSize: {
-        "512gb": false,
-        "256gb": false,
-        "64gb": false,
-        "128gb": false,
-      },
-      popularity: {
-        common: false,
-        popular: false,
-      },
-      screenSize: {
-        "13-13.9": false,
-        "14-14.9": false,
-        "15-15.9": false,
-        "16-16.9": false,
-      },
-      processor: {
-        "intel-i5": false,
-        "intel-i7": false,
-        "intel-i9": false,
-        "amd-ryzen9": false,
-      },
+      brand: [],
+      gpuBrand: [],
+      ram: [],
+      driveSize: [],
+      price: "",
+      popularity: [],
+      screenSize: [],
+      processor: [],
     });
-    setPriceRange([500]);
-    setPriceInput("");
+    setPriceRange(50);
   };
 
-  const FilterSection = ({title, sectionKey, children}) => (
-    <div className="border-b border-gray-200 pb-4">
-      <button onClick={() => toggleSection(sectionKey)} className="flex items-center justify-between w-full py-2 text-left">
-        <h3 className="font-medium text-gray-900">{title}</h3>
-        {expandedSections[sectionKey] ? <ChevronUp className="h-4 w-4 text-gray-500" /> : <ChevronDown className="h-4 w-4 text-gray-500" />}
+  const FilterSection = ({title, items, category, isExpanded}) => (
+    <div className="border-b border-gray-200 py-4">
+      <button onClick={() => toggleSection(category)} className="flex items-center justify-between w-full text-left font-medium text-gray-900 hover:text-gray-700">
+        <span>{title}</span>
+        {isExpanded ? <ChevronUp className="w-4 h-4 text-gray-500" /> : <ChevronDown className="w-4 h-4 text-gray-500" />}
       </button>
-      {expandedSections[sectionKey] && <div className="mt-3 space-y-3">{children}</div>}
+
+      {isExpanded && (
+        <div className="mt-3 space-y-2">
+          {items.map((item) => (
+            <label key={item.value} className="flex items-center">
+              <input
+                type="checkbox"
+                checked={filters[category].includes(item.value)}
+                onChange={() => handleCheckboxChange(category, item.value)}
+                className="w-4 h-4 text-blue-600 border border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+              />
+              <span className="ml-2 text-sm text-gray-700">
+                {item.label}
+                {item.count && <span className="text-gray-500">({item.count})</span>}
+              </span>
+            </label>
+          ))}
+        </div>
+      )}
     </div>
   );
 
-  const CheckboxItem = ({label, count, checked, onChange}) => (
-    <div className="flex items-center space-x-2">
-      <Checkbox id={label} checked={checked} onCheckedChange={onChange} />
-      <label htmlFor={label} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
-        {label}
-        {count && <span className="text-gray-500">({count})</span>}
-      </label>
-    </div>
-  );
+  const brandItems = [
+    {value: "Asus", label: "Asus", count: "183"},
+    {value: "Acer", label: "Acer", count: "78"},
+    {value: "Apple", label: "Apple", count: "223"},
+    {value: "Dell", label: "Dell", count: "53"},
+  ];
+
+  const gpuBrandItems = [
+    {value: "NVIDIA", label: "NVIDIA"},
+    {value: "Intel", label: "Intel"},
+    {value: "AMD", label: "AMD"},
+    {value: "Apple", label: "Apple"},
+  ];
+
+  const ramItems = [
+    {value: "32 GB", label: "32 GB"},
+    {value: "16 GB", label: "16 GB"},
+    {value: "12 GB", label: "12 GB"},
+    {value: "8 GB", label: "8 GB"},
+  ];
+
+  const driveSizeItems = [
+    {value: "512GB", label: "512GB"},
+    {value: "256GB", label: "256GB"},
+    {value: "64GB", label: "64GB"},
+    {value: "128GB", label: "128GB"},
+  ];
+
+  const popularityItems = [
+    {value: "Common", label: "Common"},
+    {value: "Popular", label: "Popular"},
+  ];
+
+  const screenSizeItems = [
+    {value: '13" - 13.9"', label: '13" - 13.9"'},
+    {value: '14" - 14.9"', label: '14" - 14.9"'},
+    {value: '15" - 15.9"', label: '15" - 15.9"'},
+    {value: '16" - 16.9"', label: '16" - 16.9"', count: "63"},
+  ];
+
+  const processorItems = [
+    {value: "Intel Core i5", label: "Intel Core i5"},
+    {value: "Intel Core i7", label: "Intel Core i7"},
+    {value: "Intel Core i9", label: "Intel Core i9"},
+    {value: "AMD Ryzen 9", label: "AMD Ryzen 9"},
+  ];
+
   return (
-    <div className="w-64 bg-white border border-gray-200 rounded-lg p-4 space-y-4">
+    <div className="w-80 bg-white border px-2 py-4 border-gray-200 rounded-lg shadow-sm">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between p-4 border-b border-gray-200">
         <h2 className="text-lg font-semibold text-gray-900">Filters</h2>
-        <Button variant="link" className="text-blue-600 hover:text-blue-800 p-0 h-auto" onClick={clearAllFilters}>
+        <button onClick={clearAllFilters} className="text-sm text-blue-600 hover:text-blue-800 font-medium">
           Clear all
-        </Button>
+        </button>
       </div>
 
-      {/* Brand */}
-      <FilterSection title="Brand" sectionKey="brand">
-        <CheckboxItem label="Asus" count={183} checked={filters.brand.asus} onChange={(checked) => handleFilterChange("brand", "asus", checked)} />
-        <CheckboxItem label="Acer" count={78} checked={filters.brand.acer} onChange={(checked) => handleFilterChange("brand", "acer", checked)} />
-        <CheckboxItem label="Apple" count={223} checked={filters.brand.apple} onChange={(checked) => handleFilterChange("brand", "apple", checked)} />
-        <CheckboxItem label="Dell" count={53} checked={filters.brand.dell} onChange={(checked) => handleFilterChange("brand", "dell", checked)} />
-      </FilterSection>
+      <div className="p-4">
+        {/* Brand Section */}
+        <FilterSection title="Brand" items={brandItems} category="brand" isExpanded={expandedSections.brand} />
 
-      {/* GPU Brand */}
-      <FilterSection title="GPU Brand" sectionKey="gpuBrand">
-        <CheckboxItem label="NVIDIA" checked={filters.gpuBrand.nvidia} onChange={(checked) => handleFilterChange("gpuBrand", "nvidia", checked)} />
-        <CheckboxItem label="Intel" checked={filters.gpuBrand.intel} onChange={(checked) => handleFilterChange("gpuBrand", "intel", checked)} />
-        <CheckboxItem label="AMD" checked={filters.gpuBrand.amd} onChange={(checked) => handleFilterChange("gpuBrand", "amd", checked)} />
-        <CheckboxItem label="Apple" checked={filters.gpuBrand.apple} onChange={(checked) => handleFilterChange("gpuBrand", "apple", checked)} />
-      </FilterSection>
+        {/* GPU Brand Section */}
+        <FilterSection title="GPU Brand" items={gpuBrandItems} category="gpuBrand" isExpanded={expandedSections.gpuBrand} />
 
-      {/* RAM */}
-      <FilterSection title="RAM" sectionKey="ram">
-        <CheckboxItem label="32 GB" checked={filters.ram["32gb"]} onChange={(checked) => handleFilterChange("ram", "32gb", checked)} />
-        <CheckboxItem label="16 GB" checked={filters.ram["16gb"]} onChange={(checked) => handleFilterChange("ram", "16gb", checked)} />
-        <CheckboxItem label="12 GB" checked={filters.ram["12gb"]} onChange={(checked) => handleFilterChange("ram", "12gb", checked)} />
-        <CheckboxItem label="8 GB" checked={filters.ram["8gb"]} onChange={(checked) => handleFilterChange("ram", "8gb", checked)} />
-      </FilterSection>
+        {/* RAM Section */}
+        <FilterSection title="RAM" items={ramItems} category="ram" isExpanded={expandedSections.ram} />
 
-      {/* Drive Size */}
-      <FilterSection title="Drive Size" sectionKey="driveSize">
-        <CheckboxItem label="512GB" checked={filters.driveSize["512gb"]} onChange={(checked) => handleFilterChange("driveSize", "512gb", checked)} />
-        <CheckboxItem label="256GB" checked={filters.driveSize["256gb"]} onChange={(checked) => handleFilterChange("driveSize", "256gb", checked)} />
-        <CheckboxItem label="64GB" checked={filters.driveSize["64gb"]} onChange={(checked) => handleFilterChange("driveSize", "64gb", checked)} />
-        <CheckboxItem label="128GB" checked={filters.driveSize["128gb"]} onChange={(checked) => handleFilterChange("driveSize", "128gb", checked)} />
-      </FilterSection>
+        {/* Drive Size Section */}
+        <FilterSection title="Drive Size" items={driveSizeItems} category="driveSize" isExpanded={expandedSections.driveSize} />
 
-      {/* Price */}
-      <FilterSection title="Price" sectionKey="price">
-        <div className="space-y-3">
-          <Input type="text" placeholder="Enter the amount" value={priceInput} onChange={(e) => setPriceInput(e.target.value)} className="w-full" />
-          <div className="px-2">
-            <Slider value={priceRange} onValueChange={setPriceRange} max={2000} min={0} step={50} className="w-full" />
-            <div className="flex justify-between text-xs text-gray-500 mt-1">
-              <span>$0</span>
-              <span>${priceRange[0]}</span>
-              <span>$2000</span>
+        {/* Price Section */}
+        <div className="border-b border-gray-200 py-4 px-4">
+          <button onClick={() => toggleSection("price")} className="flex items-center justify-between w-full text-left font-medium text-gray-900 hover:text-gray-700">
+            <span>Price</span>
+            {expandedSections.price ? <ChevronUp className="w-4 h-4 text-gray-500" /> : <ChevronDown className="w-4 h-4 text-gray-500" />}
+          </button>
+
+          {expandedSections.price && (
+            <div className="mt-3 space-y-3">
+              <input
+                type="text"
+                placeholder="Enter the amount"
+                value={filters.price}
+                onChange={(e) => setFilters((prev) => ({...prev, price: e.target.value}))}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <div className="relative">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={priceRange}
+                  onChange={(e) => setPriceRange(e.target.value)}
+                  className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer slider"
+                  style={{
+                    background: `linear-gradient(to right, #3B82F6 0%, #3B82F6 ${priceRange}%, #E5E7EB ${priceRange}%, #E5E7EB 100%)`,
+                  }}
+                />
+                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>Min</span>
+                  <span>Max</span>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
-      </FilterSection>
 
-      {/* Popularity */}
-      <FilterSection title="Popularity" sectionKey="popularity">
-        <CheckboxItem label="Common" checked={filters.popularity.common} onChange={(checked) => handleFilterChange("popularity", "common", checked)} />
-        <CheckboxItem label="Popular" checked={filters.popularity.popular} onChange={(checked) => handleFilterChange("popularity", "popular", checked)} />
-      </FilterSection>
+        {/* Popularity Section */}
+        <FilterSection title="Popularity" items={popularityItems} category="popularity" isExpanded={expandedSections.popularity} />
 
-      {/* Screen Size */}
-      <FilterSection title="Screen Size" sectionKey="screenSize">
-        <CheckboxItem label={'13" - 13.9"'} checked={filters.screenSize["13-13.9"]} onChange={(checked) => handleFilterChange("screenSize", "13-13.9", checked)} />
-        <CheckboxItem label={'14" - 14.9"'} checked={filters.screenSize["14-14.9"]} onChange={(checked) => handleFilterChange("screenSize", "14-14.9", checked)} />
-        <CheckboxItem label={'15" - 15.9"'} checked={filters.screenSize["15-15.9"]} onChange={(checked) => handleFilterChange("screenSize", "15-15.9", checked)} />
-        <CheckboxItem label={'16" - 16.9"'} count={63} checked={filters.screenSize["16-16.9"]} onChange={(checked) => handleFilterChange("screenSize", "16-16.9", checked)} />
-      </FilterSection>
+        {/* Screen Size Section */}
+        <FilterSection title="Screen Size" items={screenSizeItems} category="screenSize" isExpanded={expandedSections.screenSize} />
 
-      {/* Processor */}
-      <FilterSection title="Processor" sectionKey="processor">
-        <CheckboxItem label="Intel Core i5" checked={filters.processor["intel-i5"]} onChange={(checked) => handleFilterChange("processor", "intel-i5", checked)} />
-        <CheckboxItem label="Intel Core i7" checked={filters.processor["intel-i7"]} onChange={(checked) => handleFilterChange("processor", "intel-i7", checked)} />
-        <CheckboxItem label="Intel Core i9" checked={filters.processor["intel-i9"]} onChange={(checked) => handleFilterChange("processor", "intel-i9", checked)} />
-        <CheckboxItem label="AMD Ryzen 9" checked={filters.processor["amd-ryzen9"]} onChange={(checked) => handleFilterChange("processor", "amd-ryzen9", checked)} />
-      </FilterSection>
+        {/* Processor Section */}
+        <FilterSection title="Processor" items={processorItems} category="processor" isExpanded={expandedSections.processor} />
+      </div>
     </div>
   );
 }
