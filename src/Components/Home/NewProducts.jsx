@@ -1,13 +1,14 @@
+// src/pages/NewProducts.jsx
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ProductCard from "../Home/ProductCard"; // adjust path if needed
 
 const NewProducts = () => {
-  const products = [
+  const newArrivals = [
     {
       id: 1,
       name: "Lenovo LOQ i7-12650H RTX 4050",
-      specs:
-        "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey - Best Price In Nepal",
+      specs: "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey",
       currentPrice: "Rs 119,999",
       originalPrice: "Rs 152,999",
       image: "/Newproduct1.png",
@@ -15,8 +16,7 @@ const NewProducts = () => {
     {
       id: 2,
       name: "Lenovo LOQ i7-12650H RTX 4050",
-      specs:
-        "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey - Best Price In Nepal",
+      specs: "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey",
       currentPrice: "Rs 119,999",
       originalPrice: "Rs 152,999",
       image: "/Newproduct1.png",
@@ -24,8 +24,7 @@ const NewProducts = () => {
     {
       id: 3,
       name: "Lenovo LOQ i7-12650H RTX 4050",
-      specs:
-        "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey - Best Price In Nepal",
+      specs: "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey",
       currentPrice: "Rs 119,999",
       originalPrice: "Rs 152,999",
       image: "/Newproduct1.png",
@@ -33,8 +32,7 @@ const NewProducts = () => {
     {
       id: 4,
       name: "Lenovo LOQ i7-12650H RTX 4050",
-      specs:
-        "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey - Best Price In Nepal",
+      specs: "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey",
       currentPrice: "Rs 119,999",
       originalPrice: "Rs 152,999",
       image: "/Newproduct1.png",
@@ -42,8 +40,7 @@ const NewProducts = () => {
     {
       id: 5,
       name: "Lenovo LOQ i7-12650H RTX 4050",
-      specs:
-        "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey - Best Price In Nepal",
+      specs: "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey",
       currentPrice: "Rs 119,999",
       originalPrice: "Rs 152,999",
       image: "/Newproduct1.png",
@@ -51,8 +48,7 @@ const NewProducts = () => {
     {
       id: 6,
       name: "Lenovo LOQ i7-12650H RTX 4050",
-      specs:
-        "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey - Best Price In Nepal",
+      specs: "| 16GB RAM | 512GB SSD | 144Hz Display | Luna Grey",
       currentPrice: "Rs 119,999",
       originalPrice: "Rs 152,999",
       image: "/Newproduct1.png",
@@ -60,168 +56,100 @@ const NewProducts = () => {
   ];
 
   return (
-    <div className=" min-h-screen">
+    <div className="min-h-1/2 bg-gray-50">
       {/* Desktop Layout */}
-      <div className="hidden lg:block">
-        <div className="max-full  mx-10 px-4 pt-8">
-          {/* Header */}
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">New Products</h1>
-            <div className="flex">
-              <button className="  hover:bg-gray-100">
-                <ChevronLeft size={30} />
-              </button>
-              <button className=" hover:bg-gray-100">
-                <ChevronRight size={30} />
-              </button>
-            </div>
+      <div className="hidden lg:block max-w-full mx-auto px-6 pt-10">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold text-gray-900">New Products</h1>
+          <div className="flex gap-2">
+            <button className="hover:bg-gray-100 p-1 rounded-full">
+              <ChevronLeft size={30} />
+            </button>
+            <button className="hover:bg-gray-100 p-1 rounded-full">
+              <ChevronRight size={30} />
+            </button>
           </div>
-          <hr className="mb-5" />
+        </div>
+        <hr className="mb-6" />
 
-          <div className="flex gap-8">
-            {/* Left Sidebar - Legion Pro */}
-            <div className="w-100 bg-gray-100 rounded-2xl ">
-              <div className="mb-4 p-6">
-                <span className=" text-red-500  py-3 mb-5 rounded-full text-sm font-medium">
-                  NEW ARRIVAL
-                </span>
-              </div>
+        {/* Left Banner + Right Products */}
+        <div className="flex gap-8">
+          {/* Left: Legion Pro Promo */}
+          <div className="w-1/3 bg-gray-100 rounded-2xl p-6">
+            <span className="text-red-500 text-sm font-medium mb-3 block">
+              NEW ARRIVAL
+            </span>
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">
+              Lenovo Legion <br /> Pro
+            </h2>
+            <p className="text-gray-700 text-lg mb-6">
+              Don't miss the last <br /> Opportunity
+            </p>
+            <img
+              src="/legion.png"
+              alt="Lenovo Legion"
+              className="rounded-xl mb-6 object-cover w-full h-60"
+            />
+            <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-full font-medium text-lg transition-colors">
+              Shop Now
+            </button>
+          </div>
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-tight pl-7">
-                Lenovo Legion <br />
-                Pro
-              </h2>
-
-              <p className="text-gray-700 mb-10 text-lg pl-7">
-                Don't miss the last <br /> Opportunity
-              </p>
-
-              <div className="mb-12">
-                <img
-                  src="/legion.png"
-                  alt="Lenovo Legion Pro"
-                  className="w-fit h-75 p-4 object-cover rounded-lg"
-                />
-              </div>
-              <div className="flex justify-center">
-                <button className="w-fit  left-2/3  bg-blue-500 hover:bg-blue-600 text-white py-3 px-16 rounded-full font-medium text-lg transition-colors">
-                  Shop Now
-                </button>
-              </div>
-            </div>
-
-            {/* Right Grid - Products */}
-            <div className="flex-1">
-              <div className="grid grid-cols-3 gap-6">
-                {products.map((product) => (
-                  <div key={product.id} className="bg-white rounded-xl p-4 ">
-                    <div className="relative mb-4">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-55 p-5 border border-gray-200 object-cover rounded-lg"
-                      />
-                    </div>
-
-                    <h3 className="font-semibold text-gray-900 mb-2 text-sm leading-tight">
-                      {product.name}
-                    </h3>
-                    <p className="text-xs text-gray-600 mb-3 leading-tight">
-                      {product.specs}
-                    </p>
-
-                    <div className="flex items-center gap-2">
-                      <span className="text-red-500 font-bold text-lg">
-                        {product.currentPrice}
-                      </span>
-                      <span className="text-gray-400 line-through text-sm">
-                        {product.originalPrice}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* Right: Grid of New Arrivals */}
+          <div className="w-2/3">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+              {newArrivals.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden">
-        <div className=" py-6">
-          {/* Header */}
-          <div className="flex justify-between items-center mb-2 px-4">
-            <h1 className="text-xl font-bold text-gray-900 mb-3">
-              New Product
-            </h1>
-            <div className="flex gap-1">
-              <button className=" rounded-md">
-                <ChevronLeft size={20} />
-              </button>
-              <button className=" rounded-md">
-                <ChevronRight size={20} />
-              </button>
-            </div>
+      <div className="lg:hidden px-4 py-6">
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-xl font-bold text-gray-900">New Products</h1>
+          <div className="flex gap-1">
+            <button className="rounded-md">
+              <ChevronLeft size={20} />
+            </button>
+            <button className="rounded-md">
+              <ChevronRight size={20} />
+            </button>
           </div>
-          <hr />
+        </div>
+        <hr className="mb-4" />
 
-          {/* Acer Products Row */}
-          <div className="flex gap-4  mb-6  overflow-x-auto pb-2 px-4">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded mt-5 p-3   min-w-[160px]"
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-30 object-cover border p-5 border-gray-200 rounded-md mb-2"
-                />
-                <h3 className="text-xs font-medium text-gray-900 mb-1 line-clamp-2">
-                  {product.name}
-                </h3>
-                <div className="flex flex-col">
-                  <span className="text-red-500 font-bold text-sm">
-                    {product.currentPrice}
-                  </span>
-                  <span className="text-gray-400 line-through text-xs">
-                    {product.originalPrice}
-                  </span>
-                </div>
-              </div>
-            ))}
+        {/* Mobile: Legion Banner */}
+        <div className="flex bg-gray-100 rounded-2xl mt-6 mb-6">
+          <div className="p-4 flex-1">
+            <span className="text-red-500 text-xs font-medium">
+              NEW ARRIVAL
+            </span>
+            <h2 className="text-2xl font-bold text-gray-900 mt-1 mb-2">
+              Lenovo Legion Pro
+            </h2>
+            <p className="text-sm text-gray-700 mb-3">
+              Don't miss the last <br />
+              Opportunity
+            </p>
+            <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2.5 rounded-full font-medium">
+              Shop Now
+            </button>
           </div>
+          <img
+            src="/legion.png"
+            alt="Lenovo Legion"
+            className="h-32 w-28 object-cover rounded-r-2xl"
+          />
+        </div>
 
-          {/* Legion Pro Section */}
-          <div className="flex flex-row w-full bg-gray-100  rounded-2xl">
-            <div className=" rounded-2xl p-4">
-              <div className="mb-3">
-                <span className=" text-red-500 px-2 py-2 rounded-full text-xs font-medium">
-                  NEW ARRIVAL
-                </span>
-              </div>
-
-              <h2 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
-                Lenovo Legion Pro
-              </h2>
-
-              <p className="text-gray-700 mb-4 text-sm">
-                Don't miss the last <br />
-                Opportunity
-              </p>
-
-              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2.5 px-4 rounded-full font-medium transition-colors">
-                Shop Now
-              </button>
-            </div>
-            <div className="flex items-center">
-              <img
-                src="/legion.png"
-                alt="Lenovo Legion Pro"
-                className="w-full h-32 object-cover rounded-lg"
-              />
-            </div>
-          </div>
+        {/* Mobile Grid of Products */}
+        <div className="grid grid-cols-2 gap-4">
+          {newArrivals.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </div>
     </div>
