@@ -13,7 +13,7 @@ export default function NewsletterSubscription() {
   };
 
   return (
-    <div className="bg-black text-white py-12 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="bg-black dark:bg-white text-white dark:text-black py-12 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
         {/* Left side - Text content */}
         <div className="flex-1 lg:max-w-lg text-center lg:text-left">
@@ -27,13 +27,13 @@ export default function NewsletterSubscription() {
         {/* Right side - Email subscription form */}
         <div className="flex-1 lg:max-w-md w-full mt-6 lg:mt-0">
           <div className="flex flex-col sm:flex-row gap-2">
-            <div className="flex w-full border border-white/30 rounded-2xl overflow-hidden">
+            <div className="flex w-full border border-white/30 dark:border-gray-700 rounded-2xl overflow-hidden">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
-                className="flex-1 px-4 py-3 sm:px-6 sm:py-4 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+                className="flex-1 px-4 py-3 sm:px-6 sm:py-4 bg-transparent text-white dark:text-black placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
               />
               <button
                 onClick={handleSubmit}
