@@ -13,7 +13,7 @@ export default function NewsletterSubscription() {
   };
 
   return (
-    <div className="bg-black text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-black text-white py-12 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
         {/* Left side - Text content */}
         <div className="flex-1 lg:max-w-lg text-center lg:text-left">
