@@ -18,6 +18,7 @@ import SignUpPage from "./Pages/SignUpPage";
 import LoginPage from "./Pages/Login";
 import ResetPasswordPage from "./Components/Auth/Forget";
 import ForgetPasswordPage from "./Pages/ForgetPasswordPage";
+import Shop from "./Pages/Shop";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/bloglanding" element={<BlogLanding />} />
         <Route path="/productdescription" element={<ProductDescription />} />
@@ -34,6 +35,7 @@ function App() {
         <Route path="*" element={<h1>404 Not Found</h1>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="forget" element={<ForgetPasswordPage />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
       <Footer />
     </>
