@@ -76,19 +76,19 @@ const NewProducts = () => {
         <div className="flex gap-8">
           {/* Left: Legion Pro Promo */}
           <div className="w-1/3 bg-gray-100 rounded-2xl p-6">
-            <span className="text-red-500 text-sm font-medium mb-3 block">
+            <span className="text-red-500 text-sm font-medium mb-10 block">
               NEW ARRIVAL
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">
+            <h2 className="text-4xl font-bold mb-8 text-gray-900">
               Lenovo Legion <br /> Pro
             </h2>
-            <p className="text-gray-700 text-lg mb-6">
+            <p className="text-gray-700 text-lg mb-15 ml-2">
               Don't miss the last <br /> Opportunity
             </p>
             <img
               src="/legion.png"
               alt="Lenovo Legion"
-              className="rounded-xl mb-6 object-cover w-full h-60"
+              className="rounded-xl mb-10 object-cover w-full h-60"
             />
             <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-full font-medium text-lg transition-colors">
               Shop Now
