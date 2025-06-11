@@ -56,7 +56,7 @@ const NewProducts = () => {
   ];
 
   return (
-    <div className="min-h-1/2 bg-gray-50">
+    <div className="min-h-1/2 bg-white pb-5">
       {/* Desktop Layout */}
       <div className="hidden lg:block max-w-full mx-auto px-6 pt-10">
         <div className="flex justify-between items-center mb-6">
