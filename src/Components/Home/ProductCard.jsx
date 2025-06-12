@@ -3,12 +3,12 @@ import React from "react";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className='bg-white rounded-xl p-4 dark:bg-black'>
+    <div className='bg-white rounded-xl p-4 dark:bg-black '>
       <div className='relative mb-4'>
         <img
           src={product.image}
           alt={product.name}
-          className='w-full h-55 p-2 border border-gray-200 object-cover rounded-lg dark:border-white'
+          className='w-full sm:h-35 lg:h-55 p-2 border border-gray-200 object-cover rounded-lg dark:border-white'
         />
       </div>
       <h3 className='font-semibold text-gray-900 mb-2 text-sm leading-tight dark:text-white'>
