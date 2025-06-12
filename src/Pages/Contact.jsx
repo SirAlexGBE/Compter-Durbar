@@ -7,9 +7,11 @@ import ContactInformation from "../Components/Contact/ContactInformation";
 export default function Contact() {
   return (
     <>
-      <Map />
-      <GetAQuoteForm />
-      <ContactInformation />
+      <div className=" h-210  flex flex-col max-w-screen mx-2 my-3">
+        <Map />
+        <GetAQuoteForm />
+        <ContactInformation />
+      </div>
       <NewsletterSubscription />
     </>
   );
