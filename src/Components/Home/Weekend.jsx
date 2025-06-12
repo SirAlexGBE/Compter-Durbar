@@ -1,20 +1,36 @@
 import React from "react";
-import {Link} from "react-router-dom";
-// import bannerImage from "../../assets/bannerimage.png"; // adjust path as needed
 
 const WeekendDiscount = () => {
   return (
-    <div className="flex flex-col justify-center items-start px-6 md:px-14 py-10 gap-4 md:gap-6 bg-white/80 dark:bg-black/50 w-full md:w-[854px] h-full isolate">
-      <div className="flex flex-col justify-center items-start gap-2 z-0">
-        <h2 className="text-[36px] md:text-[57px] leading-tight font-medium text-blue-500 dark:text-blue-400">Weekend Discount</h2>
-        <p className="text-[18px] md:text-[28px] text-gray-600 dark:text-gray-300">Don’t miss the last opportunity.</p>
+    <div className="relative w-full max-w-[1380px] h-[294px] mx-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+      {/* Background Image - you'll need to add your banner-4.png */}
+      <div className="absolute inset-0 bg-cover bg-center opacity-10 dark:opacity-5" style={{backgroundImage: "url(/path-to-your/banner-4.png)"}}></div>
+
+      <div className="relative flex items-center justify-between h-full px-14 py-11">
+        {/* Left Content */}
+        <div className="flex flex-col justify-center items-start gap-5 w-[854px]">
+          <div className="flex flex-col gap-5">
+            <h2 className="text-[57px] leading-[64px] font-medium text-[#0082FF] dark:text-blue-400 tracking-[-0.25px]">Weekend Discount</h2>
+            <p className="text-[28px] leading-[36px] font-medium text-[#666666] dark:text-gray-400 w-[720px]">Don't Miss the last opportunity.</p>
+          </div>
+
+          <button className="flex justify-center items-center px-5 py-5 bg-[#83B8F5] hover:bg-[#6BA3E8] dark:bg-blue-500 dark:hover:bg-blue-600 text-black dark:text-white rounded-[30px] text-[32px] leading-[32px] font-normal transition-colors duration-200 w-[214px] h-[68px]">
+            Shop Now
+          </button>
+        </div>
+
+        {/* Right Image */}
+        <div className="hidden lg:block flex-shrink-0">
+          <div className="relative">
+            <img src="/HPVictus.png" alt="Gaming Laptop" className="w-80 h-60 object-cover rounded-lg shadow-xl" />
+          </div>
+        </div>
       </div>
 
-      <Link to="/shop" className="absolute left-6 top-[128px] md:static">
-        <button className="flex justify-center items-center px-6 py-3 md:px-5 md:py-3 gap-2 bg-[#83B8F5] rounded-full text-black text-[12px] md:text-[30px] font-normal hover:bg-blue-400 transition">
-          Shop Now
-        </button>
-      </Link>
+      {/* Mobile Image - shown below content on small screens */}
+      <div className="lg:hidden absolute bottom-4 right-4">
+        <img src="/HPVictus.png" alt="Gaming Laptop" className="w-48 h-32 object-cover rounded-lg shadow-lg opacity-80" />
+      </div>
     </div>
   );
 };

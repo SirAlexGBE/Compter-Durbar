@@ -14,8 +14,8 @@ const Home = () => {
       <DealOfTheDay />
       <NewProducts />
       <ProductCategories />
-      <NewsletterSubscription />
       <WeekendDiscount />
+      <NewsletterSubscription />
     </>
   );
 };
