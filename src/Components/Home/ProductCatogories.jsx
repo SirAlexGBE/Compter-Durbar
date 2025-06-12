@@ -20,7 +20,7 @@ const categories = [
 ];
 
 const ProductCard = ({ product }) => (
-  <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-3 mb-3">
+  <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-3 mb-3 dark:bg-black">
     <div className="flex gap-3">
       <img
         src={product.image}
@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => (
       />
 
       <div className="flex-1">
-        <h3 className="text-gray-900 font-medium leading-tight mb-2 text-xs">
+        <h3 className="text-gray-900 font-medium leading-tight mb-2 text-xs dark:text-gray-200">
           {product.name}
         </h3>
         <div className="space-y-1">
@@ -60,17 +60,19 @@ const CategoryColumn = ({ title, categoryKey }) => {
     <>
       <div className="flex-1">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-200">
+            {title}
+          </h2>
           <div className="flex gap-1">
             <button
               onClick={() => scroll("up")}
-              className="border border-gray-300 rounded-md p-1 hover:bg-gray-100"
+              className="border border-gray-300 rounded-md p-1 hover:bg-gray-100 dark:text-gray-200"
             >
               <ChevronLeft size={16} />
             </button>
             <button
               onClick={() => scroll("down")}
-              className="border border-gray-300 rounded-md p-1 hover:bg-gray-100"
+              className="border border-gray-300 rounded-md p-1 hover:bg-gray-100 dark:text-gray-200"
             >
               <ChevronRight size={16} />
             </button>
@@ -98,18 +100,20 @@ const MobileCategorySection = ({ title, category }) => {
   return (
     <>
       <div className="mb-6">
-        <div className="flex justify-between items-center mb-3">
-          <h2 className="font-bold text-gray-900 text-lg">{title}</h2>
+        <div className="flex justify-between items-center mb-3 dark:bg-black">
+          <h2 className="font-bold text-gray-900 text-lg dark:text-gray-200">
+            {title}
+          </h2>
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
-              className="border border-gray-300 rounded-lg p-2 hover:bg-gray-100"
+              className="border border-gray-300 rounded-lg p-2 hover:bg-gray-100 dark:text-white"
             >
               <ChevronLeft size={16} />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="border border-gray-300 rounded-lg p-2 hover:bg-gray-100"
+              className="border border-gray-300 rounded-lg p-2 hover:bg-gray-100 dark:text-white"
             >
               <ChevronRight size={16} />
             </button>
@@ -131,14 +135,14 @@ const MobileCategorySection = ({ title, category }) => {
 };
 
 const ProductCategories = () => (
-  <div className="bg-white w-full min-h-screen">
+  <div className="bg-white w-full min-h-screen dark:bg-black">
     {/* Desktop View - Side by Side Categories */}
     <div className="hidden lg:block">
       <div>
         <Advertise />
       </div>
-      <div className="max-w-full  mx-auto px-10 py-8">
-        <div className="flex gap-6">
+      <div className="max-w-full  mx-auto px-10 py-8 ">
+        <div className="flex gap-6 ">
           {categories.map(({ key, title }) => (
             <CategoryColumn key={key} title={title} categoryKey={key} />
           ))}
@@ -147,7 +151,7 @@ const ProductCategories = () => (
     </div>
 
     {/* Mobile View */}
-    <div className="lg:hidden px-4 py-6">
+    <div className="lg:hidden px-4 py-6 dark:bg-black">
       {categories.map(({ key, title }) => (
         <MobileCategorySection
           key={key}

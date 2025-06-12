@@ -43,7 +43,7 @@ const Introduction = () => {
   ];
 
   return (
-    <div className="  mx-auto px-20 py-10 text-gray-800">
+    <div className="  mx-auto px-20 py-10 text-gray-800 dark:text-gray-50">
       <h1 className="text-3xl font-bold mb-4">{title}</h1>
       <p className="text-base leading-relaxed mb-6">{description}</p>
 

@@ -4,15 +4,15 @@ import { ArrowUpRight } from "lucide-react";
 export default function AboutDetail() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center pt-12">
+      <div className="flex flex-col items-center justify-center pt-12 dark:bg-black dark:text-gray-200">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">
           Welcome to Computer Durbar
         </h1>
-        <p className="text-gray-500 mb-6">
+        <p className="text-gray-500 mb-6 dark:text-gray-400">
           Delivering Confidence Through Every Click and Connection
         </p>
       </div>
-      <section className="w-full px-4 pb-12 md:px-16 flex flex-col md:flex-row  justify-between gap-10 bg-white">
+      <section className="w-full px-4 pb-12 md:px-16 flex flex-col md:flex-row  justify-between gap-10 bg-white  dark:bg-black dark:text-gray-200">
         {/* Left: Image */}
         <div className="w-full md:w-1/2 rounded-xl overflow-hidden">
           <img
@@ -24,7 +24,7 @@ export default function AboutDetail() {
 
         {/* Right: Text content */}
         <div className="w-full md:w-1/2  md:text-left">
-          <p className="text-gray-700 mb-4">
+          <p className="text-gray-700 mb-4 dark:text-gray-200">
             At Computer Durbar, we are committed to delivering high-quality
             computing products and personalized services tailored to meet the
             needs of individuals, professionals, and businesses. Whether you're
@@ -33,7 +33,7 @@ export default function AboutDetail() {
             networking solutions, we have you covered.
           </p>
 
-          <p className="text-gray-700 mb-6">
+          <p className="text-gray-700 mb-6 dark:text-gray-200">
             Our goal is to ensure that technology becomes an asset in your daily
             life, not a challenge. We offer more than just products; we provide
             expert guidance, honest recommendations, and dedicated after-sales

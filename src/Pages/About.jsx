@@ -6,7 +6,7 @@ import OurMission from "../Components/About/OurMission";
 
 const About = () => {
   return (
-    <div>
+    <div className="bg-black">
       <Hero />
       <AboutDetail />
       <WhatWeOffer />

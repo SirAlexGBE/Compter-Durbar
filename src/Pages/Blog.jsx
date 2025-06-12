@@ -6,8 +6,10 @@ import DealOfTheDay from "../Components/Home/DealOfTheDay";
 const Blog = () => {
   return (
     <>
-      <News />
-      <LaptopCarousel />
+      <div className="dark:bg-black text-white">
+        <News />
+        <LaptopCarousel />
+      </div>
     </>
   );
 };
