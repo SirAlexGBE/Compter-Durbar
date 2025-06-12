@@ -20,7 +20,7 @@ const navLinks = [
 ];
 
 const navIcons = [
-  { name: "Sign In", path: "/signin", icon: <User className='w-5 h-5' /> },
+  { name: "Sign In", path: "/signup", icon: <User className='w-5 h-5' /> },
   { name: "Wishlist", path: "/wishlist", icon: <Heart className='w-5 h-5' /> },
   { name: "Cart", path: "/cart", icon: <ShoppingCart className='w-5 h-5' /> },
 ];
@@ -66,7 +66,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className='w-full bg-white sticky top-0 z-40 shadow-sm'>
+      <nav className='w-full bg-white sticky top-0 z-40 shadow-sm dark:bg-black'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex items-end  h-16 sm:h-20 pb-2'>
             {/* Empty space for mobile layout balance */}
@@ -80,7 +80,12 @@ const Navbar = () => {
               <img
                 src='logo.png'
                 alt='DURBAR'
-                className='h-10 ml-[-20px] sm:h-12 md:h-16 lg:h-18 w-24 sm:w-28 px-1 md:w-32 lg:w-36  object-contain'
+                className='h-10 ml-[-20px] sm:h-12 md:h-16  lg:h-18 w-24 sm:w-28 px-1 md:w-32 lg:w-48  object-contain block dark:hidden'
+              />
+              <img
+                src='W-Logo.png'
+                alt='DURBAR'
+                className='h-10 ml-[-20px] sm:h-12 md:h-16 lg:h-18 w-24 sm:w-28 px-1 md:w-38 lg:w-48  object-contain hidden dark:block'
               />
             </a>
 
@@ -91,7 +96,7 @@ const Navbar = () => {
                   <a
                     key={link.name}
                     href={link.path}
-                    className='text-gray-700 text-md px-3  py-2 font-medium hover:text-gray-900 transition-colors'>
+                    className='text-gray-700 text-md px-3  py-2 font-medium hover:text-gray-900 transition-colors dark:text-gray-100 dark:hover:text-gray-300'>
                     {link.name}
                   </a>
                 ))}
@@ -104,8 +109,8 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.path}
-                  className='flex flex-col items-center text-gray-700 hover:text-gray-900 transition-colors'>
-                  <span className='p-2 rounded-full hover:bg-gray-100'>
+                  className='flex flex-col items-center text-gray-700 hover:text-gray-900 transition-colors dark:text-gray-100 dark:hover:text-gray-200'>
+                  <span className='p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-600'>
                     {item.icon}
                   </span>
                   <span className='text-xs font-medium'>{item.name}</span>
