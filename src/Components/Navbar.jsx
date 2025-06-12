@@ -117,8 +117,8 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-
-            {/* Tablet/Medium Desktop Icons - Horizontal */}
+            {/* 
+            Tablet/Medium Desktop Icons - Horizontal
             <div className='hidden md:flex xl:hidden items-baseline space-x-4'>
               {navIcons.map((item) => (
                 <a
@@ -131,49 +131,49 @@ const Navbar = () => {
                   </span>
                 </a>
               ))}
-            </div>
+            </div> */}
 
             {/* Mobile/Tablet Menu Button - Right Side */}
             <button
               onClick={() => setIsMenuOpen(true)}
-              className='xl:hidden flex items-center pb-2.5 p-2 text-gray-700 hover:text-blue-600 pl-65 transition-colors self-end'>
-              <Menu className='w-5 h-5 sm:w-6 sm:h-6' />
+              className='xl:hidden flex items-center pb-2.5 p-2 text-gray-700 hover:text-blue-600 pl-65 transition-colors self-end dark:text-gray-100'>
+              <Menu className='w-10 h-5 sm:w-6 sm:h-6' />
             </button>
           </div>
         </div>
 
         {/* Desktop Search Bar */}
-        <div className='hidden xl:block py-2 border-t border-gray-100'>
+        <div className='hidden xl:block py-2 border-t border-gray-100 dark:border-gray-600'>
           <div className='max-w-7xl mx-auto px-3 sm:px-6 lg:px-8'>
             <div className='flex items-center justify-between gap-4'>
               {/* Categories Dropdown */}
               <div className='relative flex-shrink-0'>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className='flex items-center justify-between w-52 px-4 py-3 bg-white hover:bg-gray-50 transition-colors'>
+                  className='flex items-center justify-between w-52 px-4 py-3 bg-white hover:bg-gray-50 transition-colors dark:bg-black dark:hover:bg-gray-900'>
                   <div className='flex items-center gap-2'>
-                    <Grid3X3 className='w-5 h-5 text-gray-600' />
-                    <span className='text-gray-700 font-medium'>
+                    <Grid3X3 className='w-5 h-5 text-gray-600 dark:text-gray-100' />
+                    <span className='text-gray-700 font-medium dark:text-gray-100'>
                       {selectedCategory}
                     </span>
                   </div>
                   <ChevronDown
-                    className={`w-4 h-4 text-gray-500 transition-transform ${
+                    className={`w-4 h-4 text-gray-500 dark:text-gray-100 transition-transform ${
                       isDropdownOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
 
                 {isDropdownOpen && (
-                  <div className='absolute top-full left-0 w-52 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto'>
+                  <div className='absolute top-full left-0 w-52 mt-1 overflow-y:auto scrollbar-hide  bg-white border border-gray-300 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto dark:bg-gray-900 dark:border-black'>
                     {categories.map((category) => (
                       <button
                         key={category}
                         onClick={() => handleCategorySelect(category)}
-                        className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors ${
+                        className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors dark:hover:bg-gray-800 ${
                           selectedCategory === category
-                            ? "bg-blue-50 text-blue-600"
-                            : "text-gray-700"
+                            ? "bg-blue-50 text-blue-600 dark:bg-black dark:text-white"
+                            : "text-gray-700 dark:text-gray-100"
                         }`}>
                         {category}
                       </button>
@@ -191,11 +191,11 @@ const Navbar = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyPress={handleKeyPress}
                     placeholder='Search'
-                    className='w-full px-4 py-2 pr-12 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+                    className='w-full px-4 py-2 pr-12 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:border-blue-500 dark:bg-gray-900 dark:border dark:border-gray-300 dark:focus:ring-2 dark:focus:border-gray-200 dark:placeholder:text-white dark:text-white'
                   />
                   <button
                     onClick={handleSearch}
-                    className='absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-blue-600 transition-colors'>
+                    className='absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-blue-600 transition-colors dark:text-white dark:hover:text-gray-300'>
                     <Search className='w-5 h-5' />
                   </button>
                 </div>
@@ -205,15 +205,15 @@ const Navbar = () => {
               <div className='flex-shrink-0'>
                 <button
                   onClick={() => console.log("Special offers clicked")}
-                  className='flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-50 transition-all duration-200'>
-                  <span className='w-6 h-6 flex-shrink-0'>
+                  className='flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-50 transition-all duration-200 dark:bg-black dark:hover:bg-black'>
+                  <span className='w-6 h-6 flex-shrink-0 '>
                     <img
                       src={OfferIcon}
                       alt='Special Offer'
-                      className='w-full h-full object-contain'
+                      className='w-full h-full object-contain dark:invert'
                     />
                   </span>
-                  <span className='font-medium text-gray-900 text-base whitespace-nowrap'>
+                  <span className='font-medium text-gray-900 text-base whitespace-nowrap dark:text-white'>
                     Special Offer
                   </span>
                 </button>
@@ -223,11 +223,11 @@ const Navbar = () => {
         </div>
 
         {/* Tablet/Medium Desktop Compact Search */}
-        <div className='hidden md:block xl:hidden py-3 border-t border-gray-100'>
+        {/* <div className='hidden md:block xl:hidden py-3 border-t border-gray-100 dark:border-gray-900'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='flex items-center gap-4'>
-              {/* Compact Search Input */}
-              <div className='flex-1 max-w-md'>
+            <div className='flex items-center gap-4'> */}
+        {/* Compact Search Input */}
+        {/* <div className='flex-1 max-w-md'>
                 <div className='relative'>
                   <input
                     type='text'
@@ -243,10 +243,10 @@ const Navbar = () => {
                     <Search className='w-4 h-4' />
                   </button>
                 </div>
-              </div>
+              </div> */}
 
-              {/* Quick Category Pills */}
-              <div className='flex gap-2 overflow-x-auto'>
+        {/* Quick Category Pills */}
+        {/* <div className='flex gap-2 overflow-x-auto'>
                 {categories.slice(1, 4).map((category) => (
                   <button
                     key={category}
@@ -262,7 +262,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </nav>
 
       {/* Mobile/Tablet Slide Menu Overlay */}
@@ -280,31 +280,31 @@ const Navbar = () => {
 
         {/* Slide Menu */}
         <div
-          className={`absolute left-0 top-0 h-full w-4/5 sm:w-3/4 md:w-2/3 lg:w-1/2 bg-gray-100 shadow-xl transform transition-transform duration-300 ease-in-out ${
+          className={`absolute left-0 top-0 h-full w-4/5 sm:w-3/4 md:w-2/3 lg:w-1/2 bg-gray-100 shadow-xl transform transition-transform duration-300 ease-in-out dark:bg-black ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}>
           {/* Header with Logo */}
-          <div className='flex items-center justify-between p-4 bg-white border-b'>
+          <div className='flex items-center justify-between p-4 bg-white border-b dark:bg-black '>
             <img
               src='logo.png'
               alt='DURBAR'
-              className='h-8 w-20 object-contain'
+              className='h-8 w-20 object-contain dark:invert'
             />
             <button
               onClick={closeMenu}
-              className='p-2 text-gray-700 hover:text-blue-600 transition-colors'>
+              className='p-2 text-gray-700 hover:text-blue-600 transition-colors dark:text-white'>
               <X className='w-6 h-6' />
             </button>
           </div>
 
           {/* Tab Navigation */}
-          <div className='flex bg-white border-b'>
+          <div className='flex bg-white border-b dark:bg-black'>
             <button
               onClick={() => setActiveTab("Menu")}
               className={`flex-1 py-3 px-4 text-center font-medium transition-colors text-sm sm:text-base ${
                 activeTab === "Menu"
-                  ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50 dark:text-white dark:bg-black dark:border-b-2 dark:border-white"
+                  : "text-gray-600 hover:text-gray-800 dark:text-gray-200"
               }`}>
               Menu
             </button>
@@ -312,8 +312,8 @@ const Navbar = () => {
               onClick={() => setActiveTab("Categories")}
               className={`flex-1 py-3 px-4 text-center font-medium transition-colors text-sm sm:text-base ${
                 activeTab === "Categories"
-                  ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50 dark:text-white dark:bg-black dark-b-2 dark:border-white "
+                  : "text-gray-600 hover:text-gray-800 dark:text-gray-200"
               }`}>
               Categories
             </button>
@@ -329,12 +329,12 @@ const Navbar = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder='Search for anything'
-                  className='w-full px-4 py-3 pr-12 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base'
+                  placeholder='Search'
+                  className='w-full px-4 py-3 pr-12 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base dark:bg-gray-900 dark:placeholder-white dark:text-white dark:focus-ring-2 dark:focus:ring-white'
                 />
                 <button
                   onClick={handleSearch}
-                  className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-500'>
+                  className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-white'>
                   <Search className='w-5 h-5' />
                 </button>
               </div>
@@ -348,7 +348,7 @@ const Navbar = () => {
                     key={link.name}
                     href={link.path}
                     onClick={closeMenu}
-                    className='block py-3 px-4 text-gray-800 text-base sm:text-lg font-medium hover:bg-gray-200 rounded-lg transition-colors'>
+                    className='block py-3 px-4 text-gray-800 text-base sm:text-lg font-medium hover:bg-gray-200 rounded-lg transition-colors dark:text-white'>
                     {link.name}
                   </a>
                 ))}
@@ -367,8 +367,8 @@ const Navbar = () => {
                     }}
                     className={`block w-full text-left py-3 px-4 text-base sm:text-lg font-medium rounded-lg transition-colors ${
                       selectedCategory === category
-                        ? "bg-blue-100 text-blue-700"
-                        : "text-gray-800 hover:bg-gray-200"
+                        ? "bg-blue-100 text-blue-700 dark:bg-black dark:text-white"
+                        : "text-gray-800 hover:bg-gray-200 dark:text-white"
                     }`}>
                     {category}
                   </button>
@@ -378,14 +378,14 @@ const Navbar = () => {
           </div>
 
           {/* Bottom Icons */}
-          <div className='absolute bottom-0 left-0 right-0 bg-white border-t p-4'>
+          <div className='absolute bottom-0 left-0 right-0 bg-white border-t p-4 dark:bg-black'>
             <div className='flex justify-around'>
               {navIcons.map((item) => (
                 <a
                   key={item.name}
                   href={item.path}
                   onClick={closeMenu}
-                  className='flex flex-col items-center text-gray-700 hover:text-blue-600 transition-colors'>
+                  className='flex flex-col items-center text-gray-700 hover:text-blue-600 transition-colors dark:text-white'>
                   <span className='p-2 rounded-full hover:bg-gray-100'>
                     {item.icon}
                   </span>
