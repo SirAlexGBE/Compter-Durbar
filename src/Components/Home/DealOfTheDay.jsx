@@ -76,14 +76,14 @@ const DealOfTheDay = () => {
                   <img src={Fire} alt="" />
                 </span>
               </div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-gray">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-200">
                 Deal of The Day
               </h1>
             </div>
 
             {/* Countdown Timer */}
             <div className="flex items-center gap-2">
-              <button className="bg-black text-white px-7 mr-10 py-2 rounded-lg text-sm font-medium">
+              <button className="bg-black text-white px-7 mr-10 py-2 rounded-lg text-sm font-medium dark:bg-gray-400 dark:text-black">
                 Choose a deal
               </button>
               {[
@@ -94,7 +94,7 @@ const DealOfTheDay = () => {
               ].map((time, index) => (
                 <div>
                   <div key={index} className="flex flex-grid">
-                    <div className="text-sm font-bold bg-red-500 text-white px-3 py-2 rounded-lg flex flex-rowmin-w-[50px] text-center">
+                    <div className="text-sm font-bold bg-red-500 text-white px-3 py-2 rounded-lg flex flex-rowmin-w-[50px] text-center dark:text-black">
                       {formatNumber(time.value)}
                     </div>
                     <div className="pl-2  text-2xl">:</div>
@@ -105,10 +105,10 @@ const DealOfTheDay = () => {
 
             {/* Navigation */}
             <div className="flex ">
-              <button className="p-2 rounded-lg hover:bg-gray-50">
+              <button className="p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-white">
                 <ChevronLeft className="w-10 h-10" />
               </button>
-              <button className="p-2  rounded-lg hover:bg-gray-50">
+              <button className="p-2  rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-white">
                 <ChevronRight className="w-10 h-10" />
               </button>
             </div>
@@ -121,7 +121,7 @@ const DealOfTheDay = () => {
             {dealsData.map((deal) => (
               <div
                 key={deal.id}
-                className="bg-white rounded-2xl p-6 flex gap-6"
+                className="bg-white rounded-2xl p-6 flex gap-6 dark:bg-black"
               >
                 <div className="relative w-48 h-32 flex-shrink-0">
                   <div className="absolute -top-6 -right-6 bg-red-500 text-white rounded-full w-16 h-16 flex flex-col items-center justify-center text-xs font-bold z-10">
@@ -132,13 +132,13 @@ const DealOfTheDay = () => {
                   <img
                     src={deal.image}
                     alt=""
-                    className="border-gray-200 border rounded-2xl w-full h-[120%] p-5 "
+                    className="border-gray-200 border rounded-2xl w-full h-[120%] p-5 dark:bg-white "
                   />
                 </div>
 
                 {/* Left: Specs */}
                 <div className="flex-1 space-y-4">
-                  <h3 className="font-semibold text-gray-900 text-lg leading-tight">
+                  <h3 className="font-semibold text-gray-900 text-lg leading-tight dark:text-gray-200">
                     {deal.title}
                   </h3>
 
@@ -151,7 +151,7 @@ const DealOfTheDay = () => {
                     </span>
                   </div>
 
-                  <div className="flex justify-between text-sm text-gray-600 mb-2">
+                  <div className="flex justify-between text-sm text-gray-600 mb-2 dark:text-gray-300">
                     <span>
                       Available: <strong>{deal.available}</strong>
                     </span>
@@ -175,7 +175,7 @@ const DealOfTheDay = () => {
 
       {/* Mobile Layout */}
       <div className="lg:hidden transform translate-y-[-25%] h-110">
-        <div className="bg-white rounded-2xl shadow shadow-gray-400 p-6 relative ">
+        <div className="bg-white rounded-2xl shadow shadow-gray-400 p-6 relative dark:bg-black">
           {/* Mobile Header */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
@@ -184,16 +184,16 @@ const DealOfTheDay = () => {
                   <img src={Fire} alt="" />
                 </span>
               </div>
-              <h1 className="text-xl font-bold text-gray-900">
+              <h1 className="text-xl font-bold text-gray-900 dark:text-gray-200">
                 Deal of The Day
               </h1>
             </div>
 
             <div className=" ">
-              <button className="p-1 rounded-md">
+              <button className="p-1 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-white">
                 <ChevronLeft className="w-8 h-8 font-extrabold" />
               </button>
-              <button className="p-1  rounded-md">
+              <button className="p-1  rounded-md  dark:onclick:bg-gray-400 dark:text-white">
                 <ChevronRight className="w-8 h-8 font-extrabold" />
               </button>
             </div>
@@ -201,7 +201,7 @@ const DealOfTheDay = () => {
           <hr />
 
           {/* Mobile Product Card */}
-          <div className="bg-white rounded-xl p-4 relative mt-5 ">
+          <div className="bg-white rounded-xl p-4 relative mt-5 dark:bg-black ">
             <div className="relative flex justify-center mb-4">
               <div className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-12 h-12 flex flex-col items-center justify-center text-xs font-bold z-10">
                 <span>Sale</span>
@@ -213,7 +213,7 @@ const DealOfTheDay = () => {
 
             {/* Info */}
             <div className="space-y-3">
-              <h3 className="font-semibold text-gray-900 text-base leading-tight">
+              <h3 className="font-semibold text-gray-900 text-base leading-tight dark:text-gray-200">
                 {dealData.title}
               </h3>
               <div className="flex items-center gap-2">
@@ -243,7 +243,7 @@ const DealOfTheDay = () => {
 
           {/* Bottom Actions */}
           <div className="flex items-center justify-between mt-4 gap-4">
-            <button className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium flex-shrink-0">
+            <button className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium flex-shrink-0 dark:bg-gray-400">
               Choose a deal
             </button>
             <div className="flex gap-1">
@@ -254,7 +254,7 @@ const DealOfTheDay = () => {
                 timeLeft.seconds,
               ].map((val, idx) => (
                 <div key={idx} className="flex flex-grid">
-                  <div className="text-sm font-bold bg-red-500 text-white px-2 py-2 rounded-lg flex flex-rowmin-w-[20px] text-center">
+                  <div className="text-sm font-bold bg-red-500 text-white px-2 py-2 rounded-lg flex flex-rowmin-w-[20px] text-center dark:text-black">
                     {formatNumber(val)}
                   </div>
                   <div className="pl-1  text-2xl">:</div>

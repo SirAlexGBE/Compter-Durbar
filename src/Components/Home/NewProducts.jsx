@@ -56,16 +56,18 @@ const NewProducts = () => {
   ];
 
   return (
-    <div className="min-h-1/2 bg-white pb-5">
+    <div className="min-h-1/2 pb-5">
       {/* Desktop Layout */}
       <div className="hidden lg:block max-w-full mx-auto px-6 pt-10">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-900">New Products</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-200">
+            New Products
+          </h1>
           <div className="flex gap-2">
-            <button className="hover:bg-gray-100 p-1 rounded-full">
+            <button className="hover:bg-gray-100 p-1 rounded-full dark:hover:bg-gray-600 dark:text-white">
               <ChevronLeft size={30} />
             </button>
-            <button className="hover:bg-gray-100 p-1 rounded-full">
+            <button className="hover:bg-gray-100 p-1 rounded-full dark:hover:bg-gray-600 dark:text-white">
               <ChevronRight size={30} />
             </button>
           </div>
@@ -75,14 +77,14 @@ const NewProducts = () => {
         {/* Left Banner + Right Products */}
         <div className="flex gap-8">
           {/* Left: Legion Pro Promo */}
-          <div className="w-1/3 bg-gray-100 rounded-2xl p-6">
+          <div className="w-1/3 bg-gray-100 rounded-2xl p-6 dark:bg-gray-500">
             <span className="text-red-500 text-sm font-medium mb-10 block">
               NEW ARRIVAL
             </span>
-            <h2 className="text-4xl font-bold mb-8 text-gray-900">
+            <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-gray-200">
               Lenovo Legion <br /> Pro
             </h2>
-            <p className="text-gray-700 text-lg mb-15 ml-2">
+            <p className="text-gray-700 text-lg mb-15 ml-2 dark:text-gray-300">
               Don't miss the last <br /> Opportunity
             </p>
             <img
@@ -107,10 +109,12 @@ const NewProducts = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden px-4 py-6">
+      <div className="lg:hidden  py-6">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-bold text-gray-900">New Products</h1>
-          <div className="flex gap-1">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-200 pl-2">
+            New Products
+          </h1>
+          <div className="flex gap-1 dark:text-white pr-5">
             <button className="rounded-md">
               <ChevronLeft size={20} />
             </button>
@@ -122,7 +126,7 @@ const NewProducts = () => {
         <hr className="mb-4" />
 
         {/* Mobile: Legion Banner */}
-        <div className="flex bg-gray-100 rounded-2xl mt-6 mb-6">
+        <div className="flex w-full bg-gray-100 rounded-2xl  mb-6 dark:bg-gray-400">
           <div className="p-4 flex-1">
             <span className="text-red-500 text-xs font-medium">
               NEW ARRIVAL
@@ -138,11 +142,13 @@ const NewProducts = () => {
               Shop Now
             </button>
           </div>
-          <img
-            src="/legion.png"
-            alt="Lenovo Legion"
-            className="h-32 w-28 object-cover rounded-r-2xl"
-          />
+          <div className="flex items-center">
+            <img
+              src="/legion.png"
+              alt="Lenovo Legion"
+              className="h-32 w-38 object-cover flex-rounded-r-2xl"
+            />
+          </div>
         </div>
 
         {/* Mobile Grid of Products */}

@@ -9,11 +9,13 @@ import Newsletter from "../Components/Home/Newsletter";
 const Home = () => {
   return (
     <>
-      <HeroSection />
-      <DealOfTheDay />
-      <NewProducts />
-      <ProductCategories />
-      <Newsletter />
+      <div className="dark:bg-black">
+        <HeroSection />
+        <DealOfTheDay />
+        <NewProducts />
+        <ProductCategories />
+        <Newsletter />
+      </div>
     </>
   );
 };
