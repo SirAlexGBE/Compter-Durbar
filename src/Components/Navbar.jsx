@@ -20,7 +20,7 @@ const navLinks = [
 ];
 
 const navIcons = [
-  { name: "Sign In", path: "/signin", icon: <User className='w-5 h-5' /> },
+  { name: "Sign In", path: "/signup", icon: <User className='w-5 h-5' /> },
   { name: "Wishlist", path: "/wishlist", icon: <Heart className='w-5 h-5' /> },
   { name: "Cart", path: "/cart", icon: <ShoppingCart className='w-5 h-5' /> },
 ];
@@ -66,7 +66,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className='w-full bg-white sticky top-0 z-40 shadow-sm'>
+      <nav className='w-full bg-white sticky top-0 z-40 shadow-sm dark:bg-black'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex items-end  h-16 sm:h-20 pb-2'>
             {/* Empty space for mobile layout balance */}
@@ -80,7 +80,12 @@ const Navbar = () => {
               <img
                 src='logo.png'
                 alt='DURBAR'
-                className='h-10 ml-[-20px] sm:h-12 md:h-16 lg:h-18 w-24 sm:w-28 px-1 md:w-32 lg:w-36  object-contain'
+                className='h-10 ml-[-20px] sm:h-12 md:h-16  lg:h-18 w-24 sm:w-28 px-1 md:w-32 lg:w-48  object-contain block dark:hidden'
+              />
+              <img
+                src='W-Logo.png'
+                alt='DURBAR'
+                className='h-10 ml-[-20px] sm:h-12 md:h-16 lg:h-18 w-24 sm:w-28 px-1 md:w-38 lg:w-48  object-contain hidden dark:block'
               />
             </a>
 
@@ -91,7 +96,7 @@ const Navbar = () => {
                   <a
                     key={link.name}
                     href={link.path}
-                    className='text-gray-700 text-lg px-3 py-2 font-medium hover:text-gray-900 transition-colors'>
+                    className='text-gray-700 text-md px-3  py-2 font-medium hover:text-gray-900 transition-colors dark:text-gray-100 dark:hover:text-gray-300'>
                     {link.name}
                   </a>
                 ))}
@@ -104,8 +109,8 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.path}
-                  className='flex flex-col items-center text-gray-700 hover:text-gray-900 transition-colors'>
-                  <span className='p-2 rounded-full hover:bg-gray-100'>
+                  className='flex flex-col items-center text-gray-700 hover:text-gray-900 transition-colors dark:text-gray-100 dark:hover:text-gray-200'>
+                  <span className='p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-600'>
                     {item.icon}
                   </span>
                   <span className='text-xs font-medium'>{item.name}</span>
@@ -138,14 +143,14 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Search Bar */}
-        <div className='hidden xl:block py-4 border-t border-gray-100'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='flex items-center gap-6'>
+        <div className='hidden xl:block py-2 border-t border-gray-100'>
+          <div className='max-w-7xl mx-auto px-3 sm:px-6 lg:px-8'>
+            <div className='flex items-center justify-between gap-4'>
               {/* Categories Dropdown */}
-              <div className='relative'>
+              <div className='relative flex-shrink-0'>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className='flex items-center justify-between w-48 px-4 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors'>
+                  className='flex items-center justify-between w-52 px-4 py-3 bg-white hover:bg-gray-50 transition-colors'>
                   <div className='flex items-center gap-2'>
                     <Grid3X3 className='w-5 h-5 text-gray-600' />
                     <span className='text-gray-700 font-medium'>
@@ -160,7 +165,7 @@ const Navbar = () => {
                 </button>
 
                 {isDropdownOpen && (
-                  <div className='absolute top-full left-0 w-48 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto'>
+                  <div className='absolute top-full left-0 w-52 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto'>
                     {categories.map((category) => (
                       <button
                         key={category}
@@ -178,37 +183,37 @@ const Navbar = () => {
               </div>
 
               {/* Search Input */}
-              <div className='flex-1 max-w-2xl'>
+              <div className='flex-1 max-w-md mr-60 pr-39'>
                 <div className='relative'>
                   <input
                     type='text'
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder='Search products, brands, categories...'
-                    className='w-full px-6 py-3 pr-12 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    placeholder='Search'
+                    className='w-full px-4 py-2 pr-12 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                   />
                   <button
                     onClick={handleSearch}
-                    className='absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-500 hover:text-blue-600 transition-colors'>
+                    className='absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-gray-500 hover:text-blue-600 transition-colors'>
                     <Search className='w-5 h-5' />
                   </button>
                 </div>
               </div>
 
               {/* Special Offer */}
-              <div className='w-full lg:w-auto'>
+              <div className='flex-shrink-0'>
                 <button
                   onClick={() => console.log("Special offers clicked")}
-                  className='flex items-center justify-center lg:justify-start gap-3 px-6 py-3 bg-white transition-all duration-200 text-sm lg:text-base w-full lg:w-aut0'>
-                  <span className='w-8 h-8 flex-shrink-0'>
+                  className='flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-50 transition-all duration-200'>
+                  <span className='w-6 h-6 flex-shrink-0'>
                     <img
                       src={OfferIcon}
                       alt='Special Offer'
                       className='w-full h-full object-contain'
                     />
                   </span>
-                  <span className='font-medium text-gray-900 text-xl'>
+                  <span className='font-medium text-gray-900 text-base whitespace-nowrap'>
                     Special Offer
                   </span>
                 </button>

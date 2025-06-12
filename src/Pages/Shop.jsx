@@ -127,16 +127,16 @@ export default function Shop() {
   ];
 
   return (
-    <div className="w-full mx-auto  py-6">
-      <div className="flex flex-col lg:flex-row items-start ">
+    <div className='w-full mx-auto  py-6 dark:bg-black'>
+      <div className='flex flex-col lg:flex-row items-start '>
         {/* Sidebar */}
-        <div className="w-full lg:w-1/4">
+        <div className='w-full lg:w-1/4'>
           <FilterComponent />
         </div>
 
         {/* Product Grid */}
-        <div className="w-full lg:w-3/4">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
+        <div className='w-full lg:w-3/4'>
+          <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 '>
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
