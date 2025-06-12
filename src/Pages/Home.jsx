@@ -4,7 +4,8 @@ import HeroSection from "../Components/Home/HeroSection";
 import DealOfTheDay from "../Components/Home/DealOfTheDay";
 import NewProducts from "../Components/Home/NewProducts";
 import ProductCategories from "../Components/Home/ProductCatogories";
-import Newsletter from "../Components/Home/Newsletter";
+import NewsletterSubscription from "../Components/Home/Newsletter";
+import WeekendDiscount from "../Components/Home/Weekend";
 
 const Home = () => {
   return (
@@ -13,7 +14,8 @@ const Home = () => {
       <DealOfTheDay />
       <NewProducts />
       <ProductCategories />
-      <Newsletter />
+      <WeekendDiscount />
+      <NewsletterSubscription />
     </>
   );
 };
