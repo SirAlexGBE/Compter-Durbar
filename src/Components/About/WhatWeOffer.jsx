@@ -41,16 +41,14 @@ const WhatWeOffer = () => {
   ];
 
   return (
-    <section
-      className='w-full py-12'
-      style={{
-        background: "linear-gradient(180deg, #4D94FF 0%, #FFFFFF 100%)",
-      }}>
-      <div className='max-w-7xl mx-auto px-4'>
+    <section className="w-full py-12 dark:bg-[linear-gradient(180deg,_#000000_0%,_#4b5563_50%,_#000000_100%)] bg-[linear-gradient(180deg, #4D94FF 0%, transparent 100%)] mb-4">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className='text-center mb-12'>
-          <h2 className='text-4xl font-bold text-white mb-4'>What We Offer</h2>
-          <p className='text-white/90 max-w-3xl mx-auto text-lg leading-relaxed'>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4 dark:text-gray-200">
+            What We Offer
+          </h2>
+          <p className="text-white/90 max-w-3xl mx-auto text-lg leading-relaxed dark:text-gray-300">
             At Computer Durbar, we offer a comprehensive range of products and
             services to meet your every computing need—whether you're buying
             your first laptop or managing a growing business network.
@@ -58,35 +56,41 @@ const WhatWeOffer = () => {
         </div>
 
         {/* Top Row: 3 Cards */}
-        <div className='flex flex-wrap justify-center gap-10 mb-10'>
+        <div className="flex flex-wrap justify-center gap-10 mb-10">
           {services.slice(0, 3).map((service) => (
             <div
               key={service.id}
-              className='w-[300px] md:w-[315px] h-[374px] bg-gradient-to-br from-[#559EFF] to-[#006BF8] rounded-lg p-5 text-white flex flex-col items-center text-center shadow-lg'>
-              <div className='mb-4 bg-white rounded-full p-4'>
+              className="w-[300px] md:w-[315px] h-[374px] bg-gradient-to-br from-[#559EFF] to-[#006BF8] dark:from-gray-400 dark:text-gray-200  rounded-lg p-5 text-black flex flex-col items-center text-center shadow-lg"
+            >
+              <div className="mb-4 bg-white rounded-full p-4 ">
                 {React.cloneElement(service.icon, {
                   className: "w-10 h-10 text-blue-600",
                 })}
               </div>
-              <h3 className='text-xl font-bold mb-3'>{service.title}</h3>
-              <p className='text-sm text-white/90'>{service.description}</p>
+              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <p className="text-sm text-white/90 dark:text-gray-300">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Bottom Row: 2 Cards Centered */}
-        <div className='flex flex-wrap justify-center gap-10'>
+        <div className="flex flex-wrap justify-center gap-10">
           {services.slice(3).map((service) => (
             <div
               key={service.id}
-              className='w-[300px] md:w-[315px] h-[374px] bg-gradient-to-br from-[#559EFF] to-[#006BF8] rounded-lg p-5 text-white flex flex-col items-center text-center shadow-lg'>
-              <div className='mb-4 bg-white rounded-full p-4'>
+              className="w-[300px] md:w-[315px] h-[374px] bg-gradient-to-br from-[#559EFF] to-[#006BF8] dark:from-gray-400 rounded-lg p-5 text-white dark:text-gray-200 flex flex-col items-center text-center shadow-lg"
+            >
+              <div className="mb-4 bg-white rounded-full p-4 ">
                 {React.cloneElement(service.icon, {
                   className: "w-10 h-10 text-blue-600",
                 })}
               </div>
-              <h3 className='text-xl font-bold mb-3'>{service.title}</h3>
-              <p className='text-sm text-white/90'>{service.description}</p>
+              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <p className="text-sm text-white/90 dark:text-gray-300">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
