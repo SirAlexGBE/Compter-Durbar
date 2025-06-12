@@ -10,12 +10,14 @@ import WeekendDiscount from "../Components/Home/Weekend";
 const Home = () => {
   return (
     <>
-      <HeroSection />
-      <DealOfTheDay />
-      <NewProducts />
-      <ProductCategories />
-      <WeekendDiscount />
-      <NewsletterSubscription />
+      <div className="dark:bg-black">
+        <HeroSection />
+        <DealOfTheDay />
+        <NewProducts />
+        <ProductCategories />
+        <WeekendDiscount />
+        <NewsletterSubscription />
+      </div>
     </>
   );
 };
