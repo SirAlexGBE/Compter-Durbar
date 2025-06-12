@@ -123,18 +123,18 @@ const LaptopCarousel = () => {
     laptops.slice(currentIndex, currentIndex + itemsPerView);
 
   return (
-    <div className="w-full max-w-7xl mx-auto my-12 bg-white mb-5">
+    <div className="w-full max-w-7xl mx-auto mt-12  bg-white dark:bg-black ">
       {/* Header */}
       <div className="w-full px-6">
-        <div className="flex justify-between items-center py-6">
-          <h2 className="text-3xl font-bold text-gray-900">
+        <div className="flex justify-between  py-6">
+          <h2 className="text-3xl font-bold  text-gray-900 dark:text-gray-300">
             You may like also:
           </h2>
           <div className="flex gap-2">
             <button
               onClick={scrollLeft}
               disabled={currentIndex === 0}
-              className={`w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center ${
+              className={`w-10 h-10 rounded-full bg-gray-300  flex items-center justify-center ${
                 currentIndex === 0
                   ? "opacity-40 cursor-not-allowed"
                   : "hover:bg-gray-200"
@@ -145,7 +145,7 @@ const LaptopCarousel = () => {
             <button
               onClick={scrollRight}
               disabled={currentIndex >= maxIndex}
-              className={`w-10 h-10 rounded-full flex items-center justify-center ${
+              className={`w-10 h-10 rounded-full flex items-center  bg-gray-300 justify-center ${
                 currentIndex >= maxIndex
                   ? "opacity-40 cursor-not-allowed"
                   : "hover:bg-gray-200"
@@ -161,7 +161,7 @@ const LaptopCarousel = () => {
           {getVisibleItems().map((laptop) => (
             <div
               key={laptop.id}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl border border-gray-200 transition-all duration-300 flex-shrink-0 
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl border border-gray-200 dark:bg-gray-300 transition-all duration-300 flex-shrink-0 
                          w-[90%] sm:w-[48%] md:w-[47%] lg:w-[32%] xl:w-[31%] h-auto max-h-[500px]"
             >
               <div className="overflow-hidden rounded-t-xl">
@@ -172,7 +172,7 @@ const LaptopCarousel = () => {
                 />
               </div>
               <div className="p-5 pb-6">
-                <div className="flex justify-between text-xs text-gray-600 mb-3">
+                <div className="flex justify-between text-xs text-gray-600  mb-3">
                   <span className="font-medium">{laptop.author}</span>
                   <span>{laptop.date}</span>
                 </div>
