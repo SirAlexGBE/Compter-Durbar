@@ -19,6 +19,7 @@ import LoginPage from "./Pages/Login";
 import ResetPasswordPage from "./Components/Auth/Forget";
 import ForgetPasswordPage from "./Pages/ForgetPasswordPage";
 import Shop from "./Pages/Shop";
+import Contact from "./Pages/Contact";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="forget" element={<ForgetPasswordPage />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>

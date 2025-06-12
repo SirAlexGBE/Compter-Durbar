@@ -4,11 +4,12 @@ import {FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn} from "react-icons/fa
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-[#1B1B1F] text-gray-800 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 px-4 md:px-12 py-10">
+    <footer className="bg-white dark:bg-black text-gray-800 dark:text-white border-t border-gray-200 dark:border-gray-700 px-4 md:px-12 py-10">
       <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-4">
         {/* Logo & Description */}
         <div className="space-y-4">
-          <img src="/logo.png" alt="Logo" className="h-18 dark:bg-white" />
+          <img src="/logo.png" alt="Logo" className="h-18 block dark:hidden" />
+          <img src="/W-Logo.png" alt="Logo" className="h-18 hidden dark:block" />
 
           <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">Best computer store in Nepal for all kinds of laptops, desktops, accessories, and expert support.</p>
         </div>
@@ -47,7 +48,7 @@ const Footer = () => {
 
         {/* Customer Care Links */}
         <div className="space-y-3">
-          <h3 className="text-base font-semibold text-gray-800 dark:text-white">Customer Care</h3>
+          <h3 className="text-base font-semibold text-black dark:text-white">Customer Care</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <Link to="/account" className="hover:text-blue-500">
@@ -111,9 +112,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-4 text-center text-xs text-gray-500 dark:text-gray-400">
-        © {new Date().getFullYear()} Computer Durbar. All rights reserved.
-      </div>
+      <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-4 text-center text-xs text-black dark:text-white">© {new Date().getFullYear()} Computer Durbar. All rights reserved.</div>
     </footer>
   );
 };
